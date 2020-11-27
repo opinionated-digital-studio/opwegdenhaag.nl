@@ -1,15 +1,7 @@
 <template>
   <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
-      </nav>
-    </header>
-    <slot/>
+    <TheHeader />
+    <slot />
   </div>
 </template>
 
@@ -21,30 +13,115 @@ query {
 }
 </static-query>
 
-<style>
+<style lang="scss">
+html {
+  font-size: 112.5%;
+} /*18px*/
+
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
+  background: white;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #000000;
+  font-family: $font-body;
 }
 
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+p {
+  margin-bottom: 1rem;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-headers;
+  margin: 3rem 0 1.38rem;
+  font-weight: 900;
+  line-height: 1.3;
 }
 
-.nav__link {
-  margin-left: 20px;
+h1 {
+  margin-top: 0;
+  font-size: 3.052rem;
+}
+
+h2 {
+  font-size: 2.441rem;
+}
+
+h3 {
+  font-size: 1.953rem;
+}
+
+h4 {
+  font-size: 1.563rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+small,
+.text_small {
+  font-size: 0.8rem;
+}
+
+@include desktop() {
+  html {
+    font-size: 125%;
+  } /*20px*/
+
+  body {
+    background: white;
+    line-height: 1.6;
+    color: #000000;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 3rem 0 1.38rem;
+    line-height: 1.3;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 3.052rem;
+  }
+
+  h2 {
+    font-size: 2.441rem;
+  }
+
+  h3 {
+    font-size: 1.953rem;
+  }
+
+  h4 {
+    font-size: 1.563rem;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+  }
+
+  small,
+  .text_small {
+    font-size: 0.8rem;
+  }
 }
 </style>
+
+<script>
+import TheHeader from "~/components/TheHeader";
+export default {
+  components: { TheHeader },
+};
+</script>

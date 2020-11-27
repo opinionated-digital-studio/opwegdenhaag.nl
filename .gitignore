@@ -2,3 +2,4 @@ node_modules
 .nvimlog
 .env
 .temp
+.cache

@@ -1,7 +1,13 @@
-$font-headers             : 'Lato';
-$font-body                : 'Karla';
+$font-headers             : 'Lato', sans-serif;
+$font-body                : 'Karla', sans-serif;
 
+$primary-color            : #41398E;
+$secondary-color          : #C0DEEE;
+$white                    : #FFFF;
+$black                    : #313644;
+
+$global-radius            : 5px;
+
+@import '~normalize.css';
 @import '~bulma/sass/utilities/_all.sass';
-@import '~bulma/sass/elements/container.sass';
 @import '~bulma/sass/grid/columns.sass';
-@import '~bulma/sass/utilities/mixins.sass';

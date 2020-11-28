@@ -110,6 +110,10 @@ a {
     bottom: 0;
     left: 0;
   }
+  &:focus {
+    background-color: $focus-color !important;
+    color: $black !important;
+  }
 }
 
 .ow-type {

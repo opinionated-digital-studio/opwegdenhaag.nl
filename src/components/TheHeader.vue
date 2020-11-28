@@ -1,5 +1,5 @@
 <template>
-  <header class="ow-header">
+  <header class="ow-header" :class="{ 'ow-header--hidden': !showHeader }">
     <div class="ow-container">
       <div class="ow-header__row">
         <div class="column is-one-third ow-header__logo-container">
@@ -65,6 +65,18 @@ export default {
       default: "white",
     },
   },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
+  data() {
+    return {
+      showHeader: true,
+      lastScrollPosition: 0,
+    };
+  },
   computed: {
     headerModifier: function () {
       let headerStyleModifierClass;
@@ -79,17 +91,33 @@ export default {
       return headerStyleModifierClass;
     },
     buttonModifier: function () {
-      let buttonModifier
+      let buttonModifier;
       switch (this.headerStyle) {
         case "white":
-          buttonModifier = "primary"
+          buttonModifier = "primary";
           break;
         case "primary":
-          buttonModifier = "white"
+          buttonModifier = "white";
           break;
       }
-      return buttonModifier
-    }
+      return buttonModifier;
+    },
+  },
+  methods: {
+    onScroll() {
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScrollPosition < 0) {
+        return;
+      } 
+      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+      // Stop executing this function if the difference between
+      // current scroll position and last scroll position is less than some offset
+        return;
+      }
+      this.showHeader = currentScrollPosition < this.lastScrollPosition;
+      this.lastScrollPosition = currentScrollPosition;
+    },
   },
 };
 </script>
@@ -109,6 +137,7 @@ export default {
   width: 100%;
   padding: 1rem 0;
   top: 0;
+  transition: all 200ms ease;
   &__logo-container {
     line-height: 0;
   }
@@ -140,6 +169,7 @@ export default {
       padding: 0;
     }
   }
+
   &__menu-link {
     text-decoration: none;
 
@@ -147,6 +177,13 @@ export default {
       content: "";
       position: absolute;
       width: 0;
+      background-color: $secondary-color;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
     }
 
     &--primary {
@@ -156,6 +193,10 @@ export default {
 
   &--primary {
     background-color: $primary-color;
+  }
+
+  &--hidden {
+    transform: translateY(-100%);
   }
 }
 </style>

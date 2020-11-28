@@ -3,7 +3,7 @@
     <div class="ow-container">
       <div class="ow-jumbotron__body">
         <h1 class="ow-jumbotron__title">Lorem ipsum dolor sit amet</h1>
-        <p class="ow-type__p ow-type__p--lead">
+        <p class="ow-type__p ow-type__p--lead ow-jumbotron__lead">
           De maatjes van Op weg begeleiden Hagenaars die te maken hebben gehad
           met een psychose
         </p>
@@ -40,12 +40,17 @@ export default {
   overflow: hidden;
 
   &__title {
+    color: $white;
     margin: 0;
 
     @include fullhd() {
       font-size: 3.815rem;
       margin-bottom: 0.5rem;
     }
+  }
+  
+  &__lead {
+    color: $white;
   }
 
   &__link {

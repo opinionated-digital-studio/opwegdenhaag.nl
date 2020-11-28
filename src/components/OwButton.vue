@@ -1,7 +1,6 @@
 <template>
-  <a href="" class="ow-button" :class="'ow-button' + buttonColorModifier"
-    ><slot
-  /></a>
+  <a href="" class="ow-button" :class="'ow-button' + buttonColorModifier" :button-text-content="content"
+    >{{ content }}</a>
 </template>
 
 <script>
@@ -13,6 +12,10 @@ export default {
       required: false,
       default: "primary",
     },
+    content: {
+      type: String,
+      required: false
+    }
   },
   computed: {
     buttonColorModifier: function () {
@@ -45,7 +48,7 @@ export default {
   height: 100%;
 
   &:before {
-    content: "Maatje worden";
+    content: attr(button-text-content);
     position: absolute;
     padding: 0.4rem 1.2rem;
     background-color: $secondary-color;

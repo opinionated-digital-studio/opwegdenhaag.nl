@@ -101,6 +101,23 @@ export default {
   metaInfo: {
     title: "Startpagina",
   },
+  mounted() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.onScroll);
+  },
+  methods: {
+    onScroll() {
+      const currentScrollPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScrollPosition > 30) {
+          this.headerStyle = 'white'
+        } else {
+          this.headerStyle = 'primary'
+        }
+    }
+  },
   components: { OwJumbotron, OwButton },
   data() {
     return {

@@ -1,5 +1,5 @@
 <template>
-  <header class="ow-header" :class="{ 'ow-header--hidden': !showHeader }">
+  <header class="ow-header" :class="[{ 'ow-header--hidden': !showHeader }, 'ow-header' + headerModifier]">
     <div class="ow-container">
       <div class="ow-header__row">
         <div class="column is-one-third ow-header__logo-container">
@@ -138,6 +138,8 @@ export default {
   padding: 1rem 0;
   top: 0;
   transition: all 200ms ease;
+  background: none;
+
   &__logo-container {
     line-height: 0;
   }
@@ -191,8 +193,8 @@ export default {
     }
   }
 
-  &--primary {
-    background-color: $primary-color;
+  &--white {
+    background-color: $white;
   }
 
   &--hidden {

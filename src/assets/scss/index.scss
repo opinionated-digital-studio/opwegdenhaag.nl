@@ -11,6 +11,11 @@ $focus-color              : $yellow;
 
 $global-radius            : 5px;
 
+$base-font-size-small     : 112.5%;
+$base-font-size-large     : 137.5%;
+
+$column-gap               : 1rem;
+
 @import '~normalize.css';
 @import '~bulma/sass/utilities/_all.sass';
 @import '~bulma/sass/grid/columns.sass';

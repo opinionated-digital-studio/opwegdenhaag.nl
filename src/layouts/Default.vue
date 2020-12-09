@@ -2,6 +2,7 @@
   <div class="layout">
     <the-header :header-style="headerStyle" />
     <slot />
+    <the-footer />
   </div>
 </template>
 
@@ -15,24 +16,27 @@ query {
 
 <script>
 import TheHeader from "~/components/TheHeader";
+import TheFooter from "~/components/TheFooter";
 export default {
-  components: { TheHeader },
+  components: { TheHeader, TheFooter },
   props: {
     headerStyle: {
-      type: String, required: false, default: 'white'
-    }
-  }
+      type: String,
+      required: false,
+      default: "white",
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .ow-container {
-  max-width: 2160px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 6%;
 }
 html {
-  font-size: 112.5%;
+  font-size: $base-font-size-small;
 } /*18px*/
 
 body {
@@ -92,7 +96,7 @@ small,
 
 @include desktop() {
   html {
-    font-size: 137.5%;
+    font-size: $base-font-size-large;
   } /*22px*/
 }
 
@@ -100,9 +104,10 @@ a {
   text-decoration: none;
   display: inline-block;
   position: relative;
+  color: $primary-color;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     background-color: $black;
     height: 1px;
@@ -123,6 +128,11 @@ a {
       font-weight: 700;
       margin-top: 0;
     }
+  }
+
+  &__pretitle {
+    font-family: $font-headers;
+    font-weight: 700;
   }
 }
 </style>

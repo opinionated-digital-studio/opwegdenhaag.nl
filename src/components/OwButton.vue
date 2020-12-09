@@ -1,6 +1,13 @@
 <template>
-  <a href="" class="ow-button" :class="'ow-button' + buttonColorModifier" :button-text-content="content"
-    >{{ content }}</a>
+  <a
+    href=""
+    class="ow-button"
+    v-resize
+    @resize="onResize"
+    :class="'ow-button' + buttonColorModifier"
+    :button-text-content="content"
+    >{{ content }}</a
+  >
 </template>
 
 <script>
@@ -14,8 +21,21 @@ export default {
     },
     content: {
       type: String,
-      required: false
-    }
+      required: false,
+    },
+  },
+  data() {
+    return {
+      height: null,
+      width: null,
+    };
+  },
+  methods: {
+    onResize: function (e) {
+      console.log("resize event", e.detail.width, e.detail.height);
+      this.width = e.detail.width;
+      this.height = e.detail.height;
+    },
   },
   computed: {
     buttonColorModifier: function () {

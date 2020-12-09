@@ -42,7 +42,7 @@
               >
             </li>
             <li class="ow-header__menu-item ow-header__menu-item--cta">
-              <ow-button :color="buttonModifier">Maatje worden</ow-button>
+              <ow-button :color="buttonModifier" content="Maatje worden" />
             </li>
           </ul>
         </nav>

@@ -2,22 +2,34 @@
   <div class="ow-jumbotron">
     <div class="ow-container">
       <div class="ow-jumbotron__body">
-        <h1 class="ow-jumbotron__title">Lorem ipsum dolor sit amet</h1>
-        <p class="ow-type__p ow-type__p--lead ow-jumbotron__lead">
-          De maatjes van Op weg begeleiden Hagenaars die te maken hebben gehad
-          met een psychose
-        </p>
-        <a class="ow-jumbotron__link" href=""
-          >Maak kennis met ons werk &#8595;</a
-        >
+        <div class="columns">
+          <div class="column is-two-thirds">
+            <h1 class="ow-jumbotron__title">Lorem ipsum dolor sit amet</h1>
+            <p class="ow-type__p ow-type__p--lead ow-jumbotron__lead">
+              De maatjes van Op weg begeleiden Hagenaars die te maken hebben
+              gehad met een psychose
+            </p>
+            <a class="ow-jumbotron__link" href=""
+              >Maak kennis met ons werk &#8595;</a
+            >
+          </div>
+        </div>
       </div>
     </div>
-    <svg class="ow-jumbotron__circle ow-jumbotron__circle--left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <svg
+      class="ow-jumbotron__circle ow-jumbotron__circle--left"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 500 500"
+    >
       <g data-name="Layer 2">
         <circle cx="250" cy="250" r="250" data-name="Layer 1" />
       </g>
     </svg>
-    <svg class="ow-jumbotron__circle ow-jumbotron__circle--right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+    <svg
+      class="ow-jumbotron__circle ow-jumbotron__circle--right"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 500 500"
+    >
       <g data-name="Layer 2">
         <circle cx="250" cy="250" r="250" data-name="Layer 1" />
       </g>
@@ -48,7 +60,7 @@ export default {
       margin-bottom: 0.5rem;
     }
   }
-  
+
   &__lead {
     color: $white;
   }
@@ -64,10 +76,9 @@ export default {
 
   &__body {
     @include desktop() {
-      padding-right: 40%;
     }
   }
-  
+
   &__circle {
     position: absolute;
     fill: $secondary-color;

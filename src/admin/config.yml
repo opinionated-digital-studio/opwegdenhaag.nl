@@ -7,12 +7,20 @@ public_folder: "/uploads"
 
 collections:
   - name: "posts"
-    label: "Posts"
+    label: "Nieuwsberichten"
     folder: "posts"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Excerpt", name: "excerpt", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "date"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Publicatiedatum", name: "date", widget: "datetime"}
+      - {label: "Inhoud", name: "body", widget: "markdown"}
+  - name: "pages"
+    label: "Basispagina's"
+    folder: "pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "publicatiedatum", name: "date", widget: "datetime"}
+      - {label: "Inhoud", name: "body", widget: "markdown"}

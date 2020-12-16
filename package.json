@@ -12,9 +12,7 @@
     "bulma": "^0.9.1",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
-    "netlify-cms": "^2.10.71",
-    "normalize.css": "^8.0.1",
-    "vue-element-resize-detector": "^1.0.6"
+    "netlify-cms": "^2.10.71"
   },
   "devDependencies": {
     "eslint": "^7.14.0",

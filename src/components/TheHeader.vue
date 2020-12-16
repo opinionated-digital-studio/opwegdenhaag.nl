@@ -10,19 +10,19 @@
         <nav class="column ow-header__nav">
           <ul class="ow-header__menu">
             <li class="ow-header__menu-item">
-              <a
-                href=""
+              <g-link
+                to="/ik-zoek-een-maatje"
                 class="ow-header__menu-link"
                 :class="'ow-header__menu-link' + headerModifier"
-                >Ik zoek een maatje</a
+                >Ik zoek een maatje</g-link
               >
             </li>
             <li class="ow-header__menu-item">
-              <a
-                href=""
+              <g-link
+                to="/steun-ons"
                 class="ow-header__menu-link"
                 :class="'ow-header__menu-link' + headerModifier"
-                >Steun ons</a
+                >Steun ons</g-link
               >
             </li>
             <li class="ow-header__menu-item">
@@ -34,11 +34,11 @@
               >
             </li>
             <li class="ow-header__menu-item">
-              <a
-                href=""
+              <g-link
+                to="/nieuws"
                 class="ow-header__menu-link"
                 :class="'ow-header__menu-link' + headerModifier"
-                >Actueel</a
+                >Nieuws</g-link
               >
             </li>
             <li class="ow-header__menu-item ow-header__menu-item--cta">

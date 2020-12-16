@@ -14,21 +14,21 @@
             <nav class="ow-footer__nav">
               <ul class="ow-footer__menu">
                 <li class="ow-footer__menu-item">
-                  <g-link to="/" class="ow-footer__menu-link"
+                  <g-link to="/ik-zoek-een-maatje" class="ow-footer__menu-link"
                     >Ik zoek een maatje</g-link
                   >
                 </li>
                 <li class="ow-footer__menu-item">
-                  <g-link to="/" class="ow-footer__menu-link">Steun ons</g-link>
+                  <g-link to="/steun-ons" class="ow-footer__menu-link">Steun ons</g-link>
                 </li>
                 <li class="ow-footer__menu-item">
-                  <g-link to="/" class="ow-footer__menu-link">Over ons</g-link>
+                  <g-link to="/over-ons" class="ow-footer__menu-link">Over ons</g-link>
                 </li>
                 <li class="ow-footer__menu-item">
-                  <g-link to="/" class="ow-footer__menu-link">Nieuws</g-link>
+                  <g-link to="/nieuws" class="ow-footer__menu-link">Nieuws</g-link>
                 </li>
                 <li class="ow-footer__menu-item">
-                  <g-link to="/" class="ow-footer__menu-link"
+                  <g-link to="/maatje-worden" class="ow-footer__menu-link"
                     >Maatje worden</g-link
                   >
                 </li>

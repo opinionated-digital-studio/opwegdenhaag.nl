@@ -10,18 +10,19 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.4",
     "bulma": "^0.9.1",
-    "gridsome": "^0.7.0",
+    "gridsome": "^0.7.23",
     "gridsome-plugin-netlify-cms": "^1.0.9",
-    "netlify-cms": "^2.10.71"
+    "netlify-cms": "^2.10.76"
   },
   "devDependencies": {
-    "eslint": "^7.14.0",
+    "date-fns": "^2.16.1",
+    "eslint": "^7.15.0",
     "eslint-plugin-gridsome": "^1.5.0",
     "node-sass": "^5.0.0",
     "sass-loader": "^10.1.0",
     "style-resources-loader": "^1.4.1",
     "typeface-karla": "^1.1.13",
     "typeface-lato": "^1.1.13",
-    "vue-eslint-parser": "^7.1.1"
+    "vue-eslint-parser": "^7.3.0"
   }
 }

@@ -51,8 +51,22 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'posts/**/*.md',
+        baseDir: './posts',
+        pathPrefix: '/nieuws',
+        path: '*.md',
         typeName: 'Post',
+        remark: {
+          plugins: [
+            // ...local plugins
+          ]
+        }
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'pages/**/*.md',
+        typeName: 'Main',
         remark: {
           plugins: [
             // ...local plugins

@@ -2,8 +2,6 @@
   <a
     href=""
     class="ow-button"
-    v-resize
-    @resize="onResize"
     :class="'ow-button' + buttonColorModifier"
     :button-text-content="content"
     >{{ content }}</a
@@ -29,13 +27,6 @@ export default {
       height: null,
       width: null,
     };
-  },
-  methods: {
-    onResize: function (e) {
-      console.log("resize event", e.detail.width, e.detail.height);
-      this.width = e.detail.width;
-      this.height = e.detail.height;
-    },
   },
   computed: {
     buttonColorModifier: function () {

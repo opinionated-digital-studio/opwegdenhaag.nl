@@ -1,7 +1,7 @@
 <template>
   <header class="ow-header" :class="[{ 'ow-header--hidden': !showHeader }, 'ow-header' + headerModifier]">
     <div class="ow-container">
-      <div class="ow-header__row">
+      <div class="columns">
         <div class="column is-one-third ow-header__logo-container">
           <g-link class="ow-header__home-link" to="/"
             ><the-logo :header-style="headerStyle" width="10rem"
@@ -26,11 +26,11 @@
               >
             </li>
             <li class="ow-header__menu-item">
-              <a
-                href=""
+              <g-link
+                to="/over-ons"
                 class="ow-header__menu-link"
                 :class="'ow-header__menu-link' + headerModifier"
-                >Over ons</a
+                >Over ons</g-link
               >
             </li>
             <li class="ow-header__menu-item">
@@ -128,9 +128,6 @@ export default {
   margin: auto 0;
   transform: translateX(-0.8rem);
 }
-.column {
-  padding: 0;
-}
 .ow-header {
   z-index: 100;
   position: fixed;
@@ -163,8 +160,12 @@ export default {
   }
   &__menu-item {
     position: relative;
-    padding: 1rem;
     margin: auto 0;
+    padding: 1rem;
+
+    &:first-child {
+      padding-left: 0;
+    }
 
     &--cta {
       margin-left: auto;
@@ -179,7 +180,7 @@ export default {
       content: "";
       position: absolute;
       width: 0;
-      background-color: $secondary-color;
+      background-color: $primary-color;
     }
 
     &:hover {
@@ -190,6 +191,12 @@ export default {
 
     &--primary {
       color: $white;
+
+      &:hover {
+        &:after {
+          background-color: $secondary-color;
+        }
+      }
     }
   }
 

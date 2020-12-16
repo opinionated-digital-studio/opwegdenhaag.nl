@@ -1,7 +1,11 @@
 <template>
   <div class="layout">
-    <the-header :header-style="headerStyle" />
-    <slot />
+    <the-header  />
+    <div class="ow-content--default" id="main">
+      <div class="ow-container">
+        <slot />
+      </div>
+    </div>
     <the-footer />
   </div>
 </template>
@@ -19,22 +23,30 @@ import TheHeader from "~/components/TheHeader";
 import TheFooter from "~/components/TheFooter";
 export default {
   components: { TheHeader, TheFooter },
-  props: {
-    headerStyle: {
-      type: String,
-      required: false,
-      default: "white",
-    },
-  },
 };
 </script>
 
 <style lang="scss">
+.layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between 
+}
+
 .ow-container {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 6%;
+  padding: 0 10%;
 }
+
+.ow-content {
+  &--default {
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+  }
+}
+
 html {
   font-size: $base-font-size-small;
 } /*18px*/
@@ -97,7 +109,7 @@ small,
 @include desktop() {
   html {
     font-size: $base-font-size-large;
-  } /*22px*/
+  } /*20px*/
 }
 
 a {

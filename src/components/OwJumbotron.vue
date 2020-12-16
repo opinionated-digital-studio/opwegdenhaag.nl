@@ -3,7 +3,7 @@
     <div class="ow-container">
       <div class="ow-jumbotron__body">
         <div class="columns">
-          <div class="column is-two-thirds">
+          <div class="column is-two-thirds-fullhd">
             <h1 class="ow-jumbotron__title">Lorem ipsum dolor sit amet</h1>
             <p class="ow-type__p ow-type__p--lead ow-jumbotron__lead">
               De maatjes van Op weg begeleiden Hagenaars die te maken hebben

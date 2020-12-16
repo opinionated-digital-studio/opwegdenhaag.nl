@@ -3,14 +3,14 @@
     <div class="ow-container">
       <div class="ow-footer__info">
         <div class="columns">
-          <div class="column is-half">
+          <div class="column is-one-third">
             <p class="ow-footer__blurb">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non
               consequat libero. Cras fermentum fringilla scelerisque. Fusce sed
               nisi nec metus porta egestas id eu urna.
             </p>
           </div>
-          <div class="column is-one-quarter">
+          <div class="column">
             <nav class="ow-footer__nav">
               <ul class="ow-footer__menu">
                 <li class="ow-footer__menu-item">
@@ -35,7 +35,7 @@
               </ul>
             </nav>
           </div>
-          <div class="column is-one-quarter">
+          <div class="column">
             <ul class="ow-footer__menu">
               <li><strong>Stichting Ozanam 's-Gravenhage</strong></li>
               <li>2e Schuytstraat 244</li>
@@ -51,10 +51,12 @@
       </div>
 
       <div class="ow-footer__end">
-        <g-link to="/" class="ow-footer__end-link">Privacy</g-link>
-        <g-link to="/" class="ow-footer__end-link">Disclaimer</g-link>
+        <small>
+          <g-link to="/" class="ow-footer__end-link">Privacy</g-link>
+          <g-link to="/" class="ow-footer__end-link">Disclaimer</g-link>
 
-        <div class="ow-footer__end-copyright">&copy; Stichting Ozanam 's-Gravenhage {{getCurrentYear}}</div>
+          <div class="ow-footer__end-copyright">&copy; Stichting Ozanam 's-Gravenhage {{getCurrentYear}}</div>
+        </small>
       </div>
     </div>
   </footer>
@@ -81,7 +83,8 @@
     }
   }
 
-  &__menu {
+  &__menu,
+  &__end {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -95,16 +98,17 @@
       &:after {
         width: 0;
       }
+      &:hover {
+        &:after {
+          background-color: $secondary-color;
+          width: 100%;
+        }
+      }
     }
   }
   &__end {
-    @extend small;
     &-link {
-      color: $white;
       margin-right: 1rem;
-      &:after {
-        width: 0;
-      }
     }
 
     &-copyright {

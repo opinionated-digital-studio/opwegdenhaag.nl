@@ -1,7 +1,7 @@
 <template>
   <Layout :header-style="headerStyle">
     <ow-jumbotron />
-    <div class="ow-container">
+    <div class="ow-container ow-front-page__sticky">
       <div class="ow-blurb ow-front-page__content">
         <div class="ow-blurb__main-image"></div>
         <div class="columns">
@@ -97,6 +97,7 @@
 <script>
 import OwJumbotron from "~/components/OwJumbotron.vue";
 import OwButton from "~/components/OwButton.vue";
+import Layout from '~/layouts/Home.vue';
 export default {
   metaInfo: {
     title: "Startpagina",
@@ -118,7 +119,7 @@ export default {
         }
     }
   },
-  components: { OwJumbotron, OwButton },
+  components: { Layout, OwJumbotron, OwButton },
   data() {
     return {
       headerStyle: "primary",
@@ -193,6 +194,7 @@ export default {
     padding: 0;
   }
 }
+
 .ow-front-page__content {
   transform: translateY(-8rem);
 }

@@ -1,6 +1,7 @@
 backend:
-  name: github
+  name: git-gateway
   repo: opinionated-digital-studio/opwegdenhaag.nl
+  branch: scaffold
 
 media_folder: "static/uploads"
 public_folder: "/uploads"

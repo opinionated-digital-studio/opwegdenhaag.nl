@@ -28,6 +28,8 @@ module.exports = {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
+    config.resolve.alias.set('@images', '@/assets/images')
+
     types.forEach(type => {
       addStyleResource(config.module.rule('sass').oneOf(type))
     })

@@ -26,30 +26,23 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="ow-card ow-card--highlight ow-front-page__content">
+    <div class="ow-front-page__content ow-front-page-cta">
+      <div class="ow-container">
         <div class="columns">
-          <div class="ow-card__column is-half">
-            <div class="ow-card__body ow-card__body--highlight">
-              <h3 class="ow-card__title ow-card__title--highlight">
-                Lorem ipsum dolor sit amet
-              </h3>
-              <p class="ow-card__p ow-card__p--highlight">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                eos dicta tempora aut ea ut ad beatae officiis tempore quae
-                ullam fugiat quisquam quibusdam alias ipsum, consequuntur
-                aperiam similique neque.
-              </p>
-              <ow-button color="white" content="Lees meer" />
-            </div>
+          <div class="column is-one-quarter is-offset-one-quarter">
+            <ow-card title="Ik wil helpen" href="/maatje-worden" img="ik-wil-helpen.jpeg">Meld je aan om aan de slag te gaan als maatje</ow-card>
           </div>
-          <div class="ow-card__column">
-            <div class="ow-card__img ow-card__img--highlight"></div>
+          <div class="column is-one-quarter">
+            <ow-card title="Ik wil hulp" href="/ik-wil-hulp" img="direct-aanmelden.jpg">Meld jezelf of jouw cliënt aan om hulp te krijgen</ow-card>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="ow-front-page__news-overview ow-front-page__content">
+    <div class="ow-container">
+      <div class="ow-front-page-news-overview ow-front-page__content">
         <div class="columns">
           <div class="column is-one-third">
             <h2 class="h3">Actueel</h2>
@@ -91,7 +84,7 @@
                 </a>
               </li>
             </ul>
-            <g-link to="/actueel">Alle nieuwsberichten</g-link>
+            <g-link to="/nieuws">Alle nieuwsberichten</g-link>
           </div>
         </div>
       </div>
@@ -103,6 +96,7 @@
 import OwJumbotron from "~/components/OwJumbotron.vue";
 import OwButton from "~/components/OwButton.vue";
 import Layout from "~/layouts/Home.vue";
+import OwCard from "../components/OwCard.vue";
 export default {
   metaInfo: {
     title: "Startpagina",
@@ -124,7 +118,7 @@ export default {
       }
     },
   },
-  components: { Layout, OwJumbotron, OwButton },
+  components: { Layout, OwJumbotron, OwButton, OwCard },
   data() {
     return {
       headerStyle: "primary",
@@ -134,10 +128,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.ow-front-page-cta {
+  background-color: $secondary-color;
+  padding: 4rem 0;
+
+  @include fullhd() {
+    margin-bottom: 6rem;
+  }
+}
+
 .ow-news-list {
   list-style: none;
-  margin: 3rem 0 2rem 0;
+  margin: 0rem 0 2rem 0;
   padding: 0;
+
+  @include fullhd() {
+    margin: 3rem 0 2rem 0;
+  }
 
   &__item {
     border-top: 1px solid $black;
@@ -167,66 +174,50 @@ export default {
     }
   }
 }
-.ow-card {
-  &--highlight {
-    background-color: $primary-color;
-    color: $white;
-  }
-  &__title {
-    &--highlight {
-      color: $white;
-      margin-top: 0;
-    }
-  }
-  &__body {
-    &--highlight {
-      padding: 4rem;
-    }
-  }
-  &__p {
-    &--highlight {
-      margin-bottom: 6rem;
-    }
-  }
-  &__img {
-    height: 100%;
-    &--highlight {
-      background-color: grey;
-    }
-  }
-  &__column {
-    @extend .column;
-    padding: 0;
-  }
-}
 
 .ow-front-page__content {
   transform: translateY(-8rem);
 }
+
 .ow-blurb {
   &__main-image-container {
     position: relative;
-    width: 100%;
-    height: 200px;
     background-color: grey;
     overflow: hidden;
-
-    @include tablet() {
-      height: 400px;
-    }
-
-    @include desktop() {
-      height: 600px;
-    }
+    border: 1px solid $primary-color;
+    padding-top: 56.25%;
+    position: relative; 
+    width: 100%;
   }
 
   &__main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+  }
+
+  &__circle {
+    width: 30vw;
+    fill: $secondary-color;
+    transform: translateX(50%);
+  }
+
+  &__title {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  &__main-text {
+    margin-top: 0;
+    margin-bottom: 2rem;
   }
 
   &__title,
   &__main-text {
-    margin: 6rem 0;
+    @include fullhd() {
+      margin: 6rem 0;
+    }
   }
 }
 </style>

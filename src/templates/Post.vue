@@ -5,7 +5,7 @@
         <g-link to="/nieuws">&#8592; Terug naar nieuws</g-link>
       </div>
       <div class="column">
-        <h1 v-html="$page.post.title" />
+        <h1 class="page__title" v-html="$page.post.title" />
       </div>
     </div>
     <div class="columns">

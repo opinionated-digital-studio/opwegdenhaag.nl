@@ -5,7 +5,7 @@
         <g-link to="/">&#8592; Terug naar startpagina</g-link>
       </div>
       <div class="column">
-        <h1>Nieuws</h1>
+        <h1 class="page__title">Nieuws</h1>
       </div>
     </div>
     <div class="columns">

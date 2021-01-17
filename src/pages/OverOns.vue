@@ -5,7 +5,7 @@
         <g-link to="/">&#8592; Terug naar startpagina</g-link>
       </div>
       <div class="column">
-        <h1>{{ $static.main.title }}</h1>
+        <h1 class="page__title">{{ $static.main.title }}</h1>
       </div>
     </div>
     <div class="columns">

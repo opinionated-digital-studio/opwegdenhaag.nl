@@ -78,12 +78,20 @@ h5 {
 h1,
 .h1 {
   margin-top: 0;
-  font-size: 3.052rem;
+  font-size: 2.441rem;
+
+  @include fullhd() {
+    font-size: 3.052rem;
+  }
 }
 
 h2,
 .h2 {
-  font-size: 2.441rem;
+  font-size: 1.953rem;
+
+  @include fullhd() {
+    font-size: 2.441rem;
+  }
 }
 
 h3,
@@ -130,6 +138,14 @@ a {
   &:focus {
     background-color: $focus-color !important;
     color: $black !important;
+  }
+}
+
+.page {
+  &__title {
+    @include until($fullhd) {
+      margin-bottom: 0;
+    }
   }
 }
 

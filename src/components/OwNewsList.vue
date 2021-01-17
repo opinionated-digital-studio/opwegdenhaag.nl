@@ -3,7 +3,7 @@
     <li v-for="item in newsItems" :key="item.id" class="ow-news-list__item">
       <g-link :to="item.path" class="ow-news-list__link">
         <div class="ow-news-list__date ow-type__pretitle">{{item.date}}</div>
-        <h2 class="h3 ow-news-list__title">{{ item.title }}</h2>
+        <h2 class="ow-news-list__title">{{ item.title }}</h2>
       </g-link>
     </li>
   </ul>
@@ -39,6 +39,8 @@
   &__title {
     color: $black;
     margin: 0;
+    font-size: 1rem;
+
     &:after {
       width: 0;
     }

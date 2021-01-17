@@ -182,6 +182,7 @@ export default {
   position: absolute;
 
   &__toggle-bubble-container {
+    visibility: visible;
     background-color: $secondary-color;
     position: absolute;
     bottom: -10px; 
@@ -203,6 +204,7 @@ export default {
   }
 
   &__toggle-bubble-background {
+    visibility: visible;
     background-color: $secondary-color;
     z-index: -100;
     position: absolute;
@@ -267,9 +269,11 @@ export default {
       top: 0;
       height: calc(100vh);
       background-color: transparent;
+      visibility: hidden;
       padding: 0;
 
       &--is-active {
+        visibility: visible;
         transition-delay: 0.4s;
         background-color: $secondary-color;
       }
@@ -330,6 +334,7 @@ export default {
     @include fullhd() {
       padding: 1rem;
       opacity: 100%;
+      visibility: visible;
 
       &:first-child {
         padding-left: 0;
@@ -389,8 +394,10 @@ export default {
     }
   }
 
-  &--white {
-    background-color: $white;
+  @include fullhd() {
+    &--white {
+      background-color: $white;
+    }
   }
 
   &--hidden {

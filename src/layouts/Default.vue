@@ -153,7 +153,7 @@ a {
   &__p {
     &--lead {
       @extend h4;
-      font-weight: 700;
+      font-weight: 400;
       margin-top: 0;
     }
   }

@@ -6,11 +6,10 @@
           <div class="column is-two-thirds-fullhd">
             <h1 class="ow-jumbotron__title">Lorem ipsum dolor sit amet</h1>
             <p class="ow-type__p ow-type__p--lead ow-jumbotron__lead">
-              De maatjes van Op weg begeleiden Hagenaars die te maken hebben
-              gehad met een psychose
+              Onze opgeleide maatjes helpen voormalige patienten van het Centrum Eerste Psychose op weg naar zelfstandigheid en herstel in de maatschappij
             </p>
-            <a class="ow-jumbotron__link" href=""
-              >Maak kennis met ons werk &#8595;</a
+            <button class="ow-jumbotron__link" @click="scrollToBlurb"
+              >Maak kennis met ons werk &#8595;</button
             >
           </div>
         </div>
@@ -40,6 +39,13 @@
 <script>
 export default {
   name: "OwJumbotron",
+  methods: {
+    scrollToBlurb: function() {
+      document.querySelector('#blurb').scrollIntoView({
+        behavior: 'smooth'
+    });
+    }
+  }
 };
 </script>
 
@@ -67,10 +73,25 @@ export default {
   }
 
   &__link {
+    background: none;
+    border: 0;
     color: $white;
     font-weight: 400;
+    position: relative;
+
+    &:focus {
+      background-color: $focus-color !important;
+      color: $black !important;
+    }
 
     &:after {
+      content: "";
+      position: absolute;
+      background-color: $black;
+      height: 1px;
+      width: 100%;
+      bottom: -5px;
+      left: 0;
       background-color: $secondary-color;
     }
   }

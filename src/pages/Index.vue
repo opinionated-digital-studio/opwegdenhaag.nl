@@ -1,7 +1,7 @@
 <template>
   <Layout :header-style="headerStyle">
     <ow-jumbotron />
-    <div class="ow-container ow-front-page__sticky">
+    <div id="blurb" class="ow-container ow-front-page__sticky">
       <div class="ow-blurb ow-front-page__content">
         <div class="ow-blurb__main-image-container">
           <g-image

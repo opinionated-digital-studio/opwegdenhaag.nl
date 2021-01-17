@@ -54,6 +54,7 @@ export default {
   &__title {
     color: $white;
     margin: 0;
+    font-size: 2.441rem;
 
     @include fullhd() {
       font-size: 3.815rem;
@@ -90,9 +91,15 @@ export default {
     }
 
     &--right {
-      width: 30rem;
-      right: -20rem;
-      top: -15rem;
+      width: 10rem;
+      top: -5rem;
+      right: -5rem;
+
+      @include fullhd() {
+        width: 30rem;
+        top: -15rem;
+        right: -20rem;
+      }
     }
   }
 }

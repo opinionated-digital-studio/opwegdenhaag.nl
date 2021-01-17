@@ -1,5 +1,11 @@
 <template>
-  <header class="ow-header" :class="[{ 'ow-header--hidden': !showHeader }, 'ow-header' + headerModifier]">
+  <header
+    class="ow-header"
+    :class="[
+      { 'ow-header--hidden': !showHeader },
+      'ow-header' + headerModifier,
+    ]"
+  >
     <div class="ow-container">
       <div class="columns">
         <div class="column is-one-third ow-header__logo-container">
@@ -7,9 +13,31 @@
             ><the-logo :header-style="headerStyle" width="10rem"
           /></g-link>
         </div>
-        <nav class="column ow-header__nav">
+        <nav
+          class="column ow-header__nav"
+          :class="[
+            {
+              'ow-header__nav--parent-hidden': !showHeader,
+            },
+            {
+              'ow-header__nav--is-active': isActiveMenu
+            }
+          ]"
+        >
+        <div class="ow-header__toggle-bubble-container">
+          <button class="ow-header__toggle-bubble" @click="toggleMenu">
+            <span class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--top" :class="{'ow-header__toggle-bubble-hamburger--top--is-active': isActiveMenu}"></span>
+            <span class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--bottom" :class="{'ow-header__toggle-bubble-hamburger--bottom--is-active': isActiveMenu}"></span>
+          </button>
+        </div>
+        <div class="ow-header__toggle-bubble-background" :class="{'ow-header__toggle-bubble-background--is-active': isActiveMenu}"></div>
           <ul class="ow-header__menu">
-            <li class="ow-header__menu-item">
+            <li class="ow-header__menu-item ow-header__menu-item--logo" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
+              <g-link class="ow-header__home-link ow-header__home-link--mobile" to="/"
+                ><the-logo header-style="white" width="10rem"
+              /></g-link>
+            </li>
+            <li class="ow-header__menu-item" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
               <g-link
                 to="/ik-zoek-een-maatje"
                 class="ow-header__menu-link"
@@ -17,7 +45,7 @@
                 >Ik zoek een maatje</g-link
               >
             </li>
-            <li class="ow-header__menu-item">
+            <li class="ow-header__menu-item" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
               <g-link
                 to="/steun-ons"
                 class="ow-header__menu-link"
@@ -25,7 +53,7 @@
                 >Steun ons</g-link
               >
             </li>
-            <li class="ow-header__menu-item">
+            <li class="ow-header__menu-item" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
               <g-link
                 to="/over-ons"
                 class="ow-header__menu-link"
@@ -33,7 +61,7 @@
                 >Over ons</g-link
               >
             </li>
-            <li class="ow-header__menu-item">
+            <li class="ow-header__menu-item" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
               <g-link
                 to="/nieuws"
                 class="ow-header__menu-link"
@@ -41,8 +69,8 @@
                 >Nieuws</g-link
               >
             </li>
-            <li class="ow-header__menu-item ow-header__menu-item--cta">
-              <ow-button :color="buttonModifier" content="Maatje worden" />
+            <li class="ow-header__menu-item ow-header__menu-item--cta" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
+              <ow-button :color="buttonColorModifier" :size="buttonSizeModifier"  content="Maatje worden" />
             </li>
           </ul>
         </nav>
@@ -75,6 +103,7 @@ export default {
     return {
       showHeader: true,
       lastScrollPosition: 0,
+      isActiveMenu: false
     };
   },
   computed: {
@@ -90,29 +119,44 @@ export default {
       }
       return headerStyleModifierClass;
     },
-    buttonModifier: function () {
-      let buttonModifier;
-      switch (this.headerStyle) {
-        case "white":
-          buttonModifier = "primary";
-          break;
-        case "primary":
-          buttonModifier = "white";
-          break;
+    buttonColorModifier: function () {
+      let buttonColorModifier;
+      if (window.innerWidth > 1408) {
+        switch (this.headerStyle) {
+          case "white":
+            buttonColorModifier = "primary";
+            break;
+          case "primary":
+            buttonColorModifier = "white";
+            break;
+        }
+      } else {
+        buttonColorModifier = "primary";
       }
-      return buttonModifier;
+      return buttonColorModifier;
     },
+    buttonSizeModifier: function() {
+      let buttonSizeModifier;
+      if (window.innerWidth > 1408) {
+        return 'normal'
+      } else {
+        return 'large'
+      }
+    }
   },
   methods: {
+    toggleMenu() {
+      this.isActiveMenu = !this.isActiveMenu
+    },
     onScroll() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop;
       if (currentScrollPosition < 0) {
         return;
-      } 
+      }
       if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-      // Stop executing this function if the difference between
-      // current scroll position and last scroll position is less than some offset
+        // Stop executing this function if the difference between
+        // current scroll position and last scroll position is less than some offset
         return;
       }
       this.showHeader = currentScrollPosition < this.lastScrollPosition;
@@ -130,16 +174,116 @@ export default {
 }
 .ow-header {
   z-index: 100;
-  position: fixed;
   width: 100%;
   padding: 1rem 0;
   top: 0;
   transition: all 200ms ease;
   background: none;
+  position: absolute;
+
+  &__toggle-bubble-container {
+    background-color: $secondary-color;
+    position: absolute;
+    bottom: -10px; 
+    right: -10px;
+    border-radius: 50%;
+  }
+
+  &__toggle-bubble {
+    border: none;
+    background-color: transparent;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    z-index: 10000;
+
+    @include fullhd() {
+      display: none;
+    }
+  }
+
+  &__toggle-bubble-background {
+    background-color: $secondary-color;
+    z-index: -100;
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    clip-path: circle(40px at calc(100vw - 29.3px) calc(100vh - 30px));
+    transition-timing-function: ease-out;
+    transition: clip-path 0.4s;
+
+    &--is-active {
+      clip-path: circle(110vh at calc(100vw - 29.3px) calc(100vh - 30px));
+    }
+
+    @include fullhd() {
+      display: none;
+    }
+  }
+
+  &__toggle-bubble-hamburger {
+    display: block;
+    z-index: 100000;
+    width: 40px;
+    height: 6px;
+    background-color: $primary-color;
+    position: absolute;
+    border-radius: $global-radius;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.4s;
+    transition-timing-function: ease-in;
+
+    &--top {
+      top: 30px;
+
+      &--is-active {
+        transition-timing-function: ease-out;
+        transform: translateX(-50%) translateY(125%) rotate(45deg);
+      }
+    }
+
+    &--bottom {
+      bottom: 30px;
+
+      &--is-active {
+        transition-timing-function: ease-out;
+        transform: translateX(-50%) translateY(-125%) rotate(-45deg);
+      }
+    }
+  }
+
+  @include fullhd() {
+    position: fixed;
+  }
+
+  &__nav {
+    position: fixed;
+    left: 0;
+    width: 100%;
+
+    @include until($fullhd) {
+      top: 0;
+      height: calc(100vh);
+      background-color: transparent;
+      padding: 0;
+
+      &--is-active {
+        transition-delay: 0.4s;
+        background-color: $secondary-color;
+      }
+    }
+
+    @include fullhd() {
+      position: relative;
+    }
+  }
 
   &__logo-container {
     line-height: 0;
   }
+
   &__home-link {
     display: inline-block;
     margin: auto 0;
@@ -147,7 +291,14 @@ export default {
     &:after {
       width: 0;
     }
+
+    &--mobile {
+      transform: translateX(1.6rem);
+      padding: 1rem 0;
+      margin-bottom: 4rem;
+    }
   }
+
   &__row {
     @extend .columns;
     margin: 0 !important;
@@ -155,26 +306,58 @@ export default {
   &__menu {
     list-style: none;
     margin: 0;
-    padding: 0;
-    display: flex;
+    padding: 0 10%;
+
+    @include fullhd() {
+      display: flex;
+      padding: 0;
+    }
   }
   &__menu-item {
     position: relative;
     margin: auto 0;
-    padding: 1rem;
+    text-align: right;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s;
 
-    &:first-child {
-      padding-left: 0;
+    &--is-active {
+      visibility: visible;
+      transition-delay: 0.4s;
+      opacity: 100%;
+    }
+
+    @include fullhd() {
+      padding: 1rem;
+      opacity: 100%;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &--logo {
+        @include fullhd() {
+          display: none;
+        }
+      }
     }
 
     &--cta {
+      margin-top: 1rem;
       margin-left: auto;
       padding: 0;
+
+      @include fullhd() {
+        margin-top: 0;
+      }
     }
   }
 
   &__menu-link {
     text-decoration: none;
+    font-size: 1.953rem;
+    font-weight: 700;
+    font-family: $font-headers;
 
     &:after {
       content: "";
@@ -189,12 +372,18 @@ export default {
       }
     }
 
-    &--primary {
-      color: $white;
+    @include fullhd() {
+      font-family: $font-body;
+      font-size: inherit;
+      font-weight: normal;
 
-      &:hover {
-        &:after {
-          background-color: $secondary-color;
+      &--primary {
+        color: $white;
+
+        &:hover {
+          &:after {
+            background-color: $secondary-color;
+          }
         }
       }
     }
@@ -205,7 +394,9 @@ export default {
   }
 
   &--hidden {
-    transform: translateY(-100%);
+    @include fullhd() {
+      transform: translateY(-100%);
+    }
   }
 }
 </style>

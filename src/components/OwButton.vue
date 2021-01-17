@@ -2,7 +2,7 @@
   <a
     href=""
     class="ow-button"
-    :class="'ow-button' + buttonColorModifier"
+    :class="['ow-button' + buttonColorModifier + ' ow-button' + buttonSizeModifier]"
     :button-text-content="content"
     >{{ content }}</a
   >
@@ -21,6 +21,11 @@ export default {
       type: String,
       required: false,
     },
+    size: {
+      type: String,
+      required: false,
+      default: 'normal'
+    }
   },
   data() {
     return {
@@ -41,6 +46,18 @@ export default {
       }
       return buttonColorModifierClass;
     },
+    buttonSizeModifier: function () {
+      let buttonSizeModifierClass
+      switch (this.size) {
+        case "large":
+          buttonSizeModifierClass = "--large";
+          break;
+        case "normal":
+          buttonSizeModifierClass = "--normal";
+          break;
+      }
+      return buttonSizeModifierClass
+    }
   },
 };
 </script>
@@ -83,6 +100,10 @@ export default {
   &--white {
     background-color: $white;
     color: $primary-color;
+  }
+
+  &--large {
+    font-size: 1.563rem;
   }
 }
 </style>

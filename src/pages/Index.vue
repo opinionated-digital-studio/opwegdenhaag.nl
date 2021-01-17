@@ -3,7 +3,12 @@
     <ow-jumbotron />
     <div class="ow-container ow-front-page__sticky">
       <div class="ow-blurb ow-front-page__content">
-        <div class="ow-blurb__main-image"></div>
+        <div class="ow-blurb__main-image-container">
+          <g-image
+            class="ow-blurb__main-image"
+            src="~/assets/images/jumbo.jpeg"
+          />
+        </div>
         <div class="columns">
           <div class="column is-one-third">
             <h2 class="h3 ow-blurb__title">
@@ -97,7 +102,7 @@
 <script>
 import OwJumbotron from "~/components/OwJumbotron.vue";
 import OwButton from "~/components/OwButton.vue";
-import Layout from '~/layouts/Home.vue';
+import Layout from "~/layouts/Home.vue";
 export default {
   metaInfo: {
     title: "Startpagina",
@@ -112,12 +117,12 @@ export default {
     onScroll() {
       const currentScrollPosition =
         window.pageYOffset || document.documentElement.scrollTop;
-        if (currentScrollPosition > 30) {
-          this.headerStyle = 'white'
-        } else {
-          this.headerStyle = 'primary'
-        }
-    }
+      if (currentScrollPosition > 30) {
+        this.headerStyle = "white";
+      } else {
+        this.headerStyle = "primary";
+      }
+    },
   },
   components: { Layout, OwJumbotron, OwButton },
   data() {
@@ -199,10 +204,24 @@ export default {
   transform: translateY(-8rem);
 }
 .ow-blurb {
+  &__main-image-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: grey;
+    overflow: hidden;
+
+    @include tablet() {
+      height: 400px;
+    }
+
+    @include desktop() {
+      height: 600px;
+    }
+  }
+
   &__main-image {
     width: 100%;
-    height: 600px;
-    background-color: grey;
   }
 
   &__title,

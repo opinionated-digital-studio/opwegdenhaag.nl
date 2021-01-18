@@ -40,6 +40,7 @@
     color: $black;
     margin: 0;
     font-size: 1rem;
+    font-weight: normal;
 
     &:after {
       width: 0;

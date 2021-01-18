@@ -30,7 +30,7 @@
 
     <div class="ow-front-page__content ow-front-page-cta">
       <div class="ow-container">
-        <div class="columns">
+        <div class="columns is-fullhd">
           <div class="column is-one-quarter  is-offset-one-quarter">
             <ow-card title="Ik wil helpen" href="/maatje-worden" img="ik-wil-helpen.jpeg">Meld je aan om aan de slag te gaan als maatje</ow-card>
           </div>
@@ -48,38 +48,7 @@
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur repellendus quidem, autem id ex voluptas facere vel sunt. Corporis saepe iusto possimus eum asperiores doloribus magnam autem officia aliquam voluptatem?</p>
         </div>
         <div class="column">
-          <ul class="ow-news-list">
-            <li class="ow-news-list__item">
-              <a href="" class="ow-news-list__link">
-                <div class="ow-news-list__date ow-type__pretitle">
-                  21 Januari 2021
-                </div>
-                <div class="ov-news-list__title">
-                  Lorem ipsum dolor isit amet
-                </div>
-              </a>
-            </li>
-            <li class="ow-news-list__item">
-              <a href="" class="ow-news-list__link">
-                <div class="ow-news-list__date ow-type__pretitle">
-                  21 Januari 2021
-                </div>
-                <div class="ov-news-list__title">
-                  Lorem ipsum dolor isit amet
-                </div>
-              </a>
-            </li>
-            <li class="ow-news-list__item">
-              <a href="" class="ow-news-list__link">
-                <div class="ow-news-list__date ow-type__pretitle">
-                  21 Januari 2021
-                </div>
-                <div class="ov-news-list__title">
-                  Lorem ipsum dolor isit amet
-                </div>
-              </a>
-            </li>
-          </ul>
+          <ow-news-list :content="$page.posts.edges"/>
           <g-link to="/nieuws">Alle nieuwsberichten</g-link>
         </div>
       </div>
@@ -92,6 +61,8 @@ import OwJumbotron from "~/components/OwJumbotron.vue";
 import OwButton from "~/components/OwButton.vue";
 import Layout from "~/layouts/Home.vue";
 import OwCard from "../components/OwCard.vue";
+import OwNewsList from '../components/OwNewsList.vue';
+
 export default {
   metaInfo: {
     title: "Startpagina",
@@ -113,7 +84,7 @@ export default {
       }
     },
   },
-  components: { Layout, OwJumbotron, OwButton, OwCard },
+  components: { Layout, OwJumbotron, OwButton, OwCard, OwNewsList },
   data() {
     return {
       headerStyle: "primary",
@@ -206,6 +177,10 @@ export default {
   &__main-text {
     margin-top: 0;
     margin-bottom: 2rem;
+
+    @include tablet() {
+      margin-top: 2rem;
+    }
   }
 
   &__title,
@@ -216,3 +191,19 @@ export default {
   }
 }
 </style>
+
+<page-query>
+query {
+  posts: allPost {
+    edges {
+      node {
+        id
+        title
+        path
+        date
+      }
+    }
+  }
+}
+
+</page-query>

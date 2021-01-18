@@ -30,7 +30,12 @@ import OwNewsList from '../components/OwNewsList.vue'
 export default {
   components: {
     OwNewsList
-  }
+  },
+  metaInfo() {
+    return {
+    title: 'Nieuws',
+    }
+  },
 }
 </script>
 

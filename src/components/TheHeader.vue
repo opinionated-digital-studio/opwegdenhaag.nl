@@ -111,6 +111,7 @@
               <ow-button
                 :color="buttonColorModifier"
                 :size="buttonSizeModifier"
+                href="/maatje-worden"
                 content="Maatje worden"
               />
             </li>

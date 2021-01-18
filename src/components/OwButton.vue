@@ -1,7 +1,7 @@
 <template>
   <a
     v-if="buttonType === 'link'"
-    href=""
+    :href="href"
     class="ow-button"
     :class="['ow-button' + buttonColorModifier + ' ow-button' + buttonSizeModifier]"
     :button-text-content="content"
@@ -40,6 +40,11 @@ export default {
       type: String,
       required: false,
       default: 'link'
+    },
+    href: {
+      type: String,
+      required: false,
+      default: ''
     }
   },
   data() {

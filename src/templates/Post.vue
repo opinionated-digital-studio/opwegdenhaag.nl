@@ -9,14 +9,18 @@
       </div>
     </div>
     <div class="columns">
+      <div class="column is-offset-one-third">
+        <div class="ow-page-body">
+          <p class="ow-page__date">Geplaatst op {{formatDate}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="columns">
       <div class="column is-one-third">
         <ow-social-share/>
       </div>
       <div class="column">
-        <div class="ow-page-body">
-          <p class="ow-page__date">Geplaatst op {{formatDate}}</p>
-          <div v-html="$page.post.content"></div>
-        </div>
+        <div v-html="$page.post.content"></div>
       </div>
     </div>
     <div>

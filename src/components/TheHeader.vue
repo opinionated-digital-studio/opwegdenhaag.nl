@@ -375,7 +375,7 @@ export default {
     &--is-active {
       visibility: visible;
       transition-delay: 0.4s;
-      opacity: 100%;
+      opacity: 1;
     }
 
     @include fullhd() {

@@ -110,7 +110,7 @@
             >
               <ow-button
                 :color="buttonColorModifier"
-                size="small"
+                :size="buttonSizeModifier"
                 content="Maatje worden"
               />
             </li>
@@ -138,18 +138,25 @@ export default {
   mounted() {
     if (process.isClient) {
       window.addEventListener("scroll", this.onScroll);
+      window.addEventListener("resize", this.onResize)
     }
   },
   beforeDestroy() {
     if (process.isClient) {
       window.removeEventListener("scroll", this.onScroll);
+      window.removeEventListener("resize", this.onResize)
     }
   },
   data() {
+    let windowWidth
+    if (process.isClient) {
+      windowWidth = window.innerWidth
+    }
     return {
       showHeader: true,
       lastScrollPosition: 0,
       isActiveMenu: false,
+      windowWidth: windowWidth
     };
   },
   computed: {
@@ -167,8 +174,7 @@ export default {
     },
     buttonColorModifier: function () {
       let buttonColorModifier;
-      if (process.isClient) {
-        if (window.innerWidth > 1408) {
+        if (this.windowWidth > 1408) {
           switch (this.headerStyle) {
             case "white":
               buttonColorModifier = "primary";
@@ -180,18 +186,26 @@ export default {
         } else {
           buttonColorModifier = "primary";
         }
-      } else {
-        buttonColorModifier = "primary";
-      }
       return buttonColorModifier;
     },
     buttonSizeModifier: function () {
-
+      let buttonSizeModifier
+        if (this.windowWidth > 1408) {
+          buttonSizeModifier = "normal";
+        } else {
+          buttonSizeModifier = "large";
+        }
+      return buttonSizeModifier
     },
   },
   methods: {
     toggleMenu() {
       this.isActiveMenu = !this.isActiveMenu;
+    },
+    onResize() {
+      if (process.isClient) {
+        this.windowWidth = window.innerWidth
+      }
     },
     onScroll() {
       if (process.isClient) {

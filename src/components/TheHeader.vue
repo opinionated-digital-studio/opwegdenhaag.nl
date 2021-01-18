@@ -110,7 +110,7 @@
             >
               <ow-button
                 :color="buttonColorModifier"
-                :size="buttonSizeModifier"
+                size="small"
                 content="Maatje worden"
               />
             </li>
@@ -180,17 +180,13 @@ export default {
         } else {
           buttonColorModifier = "primary";
         }
-        return buttonColorModifier;
+      } else {
+        buttonColorModifier = "primary";
       }
+      return buttonColorModifier;
     },
     buttonSizeModifier: function () {
-      if (process.isClient) {
-        if (window.innerWidth > 1408) {
-          return "normal";
-        } else {
-          return "large";
-        }
-      }
+
     },
   },
   methods: {
@@ -384,7 +380,7 @@ export default {
 
     @include fullhd() {
       padding: 1rem;
-      opacity: 100%;
+      opacity: 1;
       visibility: visible;
 
       &:first-child {

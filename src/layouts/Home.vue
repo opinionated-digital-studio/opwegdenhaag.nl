@@ -23,7 +23,7 @@ export default {
     headerStyle: {
       type: String,
       required: false,
-      default: "white",
+      default: "primary",
     },
   },
   computed: {
@@ -32,6 +32,9 @@ export default {
         if (window.innerWidth < 1408) {
           this.headerStyle = "primary"
         } 
+        return this.headerStyle
+      } else {
+        this.headerStyle = "primary"
         return this.headerStyle
       }
     }

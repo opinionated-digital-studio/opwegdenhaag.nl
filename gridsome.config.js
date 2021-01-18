@@ -53,7 +53,7 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        baseDir: './posts',
+        baseDir: './content/posts',
         pathPrefix: '/nieuws',
         path: '*.md',
         typeName: 'Post',
@@ -67,19 +67,13 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'pages/**/*.md',
+        path: './content/pages/**/*.md',
         typeName: 'Main',
         remark: {
           plugins: [
             // ...local plugins
           ]
         }
-      }
-    },
-    {
-      use: `gridsome-plugin-netlify-cms`,
-      options: {
-        publicPath: `/admin`
       }
     },
   ]

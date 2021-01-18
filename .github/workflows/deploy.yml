@@ -19,3 +19,4 @@ jobs:
           cd /home/github/deployments/opwegdenhaag.nl
           git pull origin main
           git status
+          npm run build

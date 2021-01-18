@@ -1,11 +1,21 @@
 <template>
   <a
+    v-if="buttonType === 'link'"
     href=""
     class="ow-button"
     :class="['ow-button' + buttonColorModifier + ' ow-button' + buttonSizeModifier]"
     :button-text-content="content"
     >{{ content }}</a
   >
+  <button v-else-if="buttonType === 'submit'"
+    :class="['ow-button' + buttonColorModifier + ' ow-button' + buttonSizeModifier]"
+    class="ow-button"
+    value="test"
+    type="submit"
+    :button-text-content="content"
+    >
+    {{content}}
+  </button>
 </template>
 
 <script>
@@ -25,12 +35,18 @@ export default {
       type: String,
       required: false,
       default: 'normal'
+    },
+    type: {
+      type: String,
+      required: false,
+      default: 'link'
     }
   },
   data() {
     return {
       height: null,
       width: null,
+      buttonType: this.type
     };
   },
   computed: {
@@ -74,6 +90,16 @@ export default {
   display: inline-block;
   vertical-align: middle;
   height: 100%;
+  font-family: $font-body;
+  line-height: 1.6;
+  border: 0;
+  font-size: 100%;
+
+  &:focus {
+    background-color: $focus-color;
+    color: $black;
+  }
+
 
   &:before {
     content: attr(button-text-content);

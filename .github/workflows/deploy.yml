@@ -16,6 +16,6 @@ on:
           key: ${{ secrets.OZANAM_GH }}
           port: 22
           script: |
-          cd /home/github/deployments
-          git pull origin main
-          git status
+            cd /home/github/deployments
+            git pull origin main
+            git status

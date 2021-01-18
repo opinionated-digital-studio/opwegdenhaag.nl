@@ -10,7 +10,7 @@
           />
         </div>
         <div class="columns">
-          <div class="column is-one-third">
+          <div class="column is-one-third-fullhd">
             <h2 class="h3 ow-blurb__title">
               Een maatje voor iedereen die het nodig heeft
             </h2>
@@ -30,11 +30,11 @@
 
     <div class="ow-front-page__content ow-front-page-cta">
       <div class="ow-container">
-        <div class="columns is-fullhd">
-          <div class="column is-one-quarter  is-offset-one-quarter">
+        <div class="columns is-desktop">
+          <div class="column is-one-quarter-fullhd is-offset-one-quarter-fullhd">
             <ow-card title="Ik wil helpen" href="/maatje-worden" img="ik-wil-helpen.jpeg">Meld je aan om aan de slag te gaan als maatje</ow-card>
           </div>
-          <div class="column is-one-quarter">
+          <div class="column is-one-quarter-fullhd">
             <ow-card title="Ik wil hulp" href="/ik-wil-hulp" img="direct-aanmelden.jpg">Meld jezelf of jouw cliënt aan om hulp te krijgen</ow-card>
           </div>
         </div>

@@ -54,11 +54,6 @@ import { format } from "date-fns";
 import { nl } from "date-fns/locale";
 
 export default {
-  metaInfo() {
-    return {
-      title: "Actueel",
-    };
-  },
   computed: {
     newsItems: function () {
       const processedDate = this.content.map((node) => {

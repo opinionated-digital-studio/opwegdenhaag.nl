@@ -14,7 +14,7 @@
             <nav class="ow-footer__nav">
               <ul class="ow-footer__menu">
                 <li class="ow-footer__menu-item">
-                  <g-link to="/ik-zoek-een-maatje" class="ow-footer__menu-link"
+                  <g-link to="/ik-wil-hulp" class="ow-footer__menu-link"
                     >Ik zoek een maatje</g-link
                   >
                 </li>

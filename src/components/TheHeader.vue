@@ -24,11 +24,13 @@
             }
           ]"
         >
-        <div class="ow-header__toggle-bubble-container">
-          <button class="ow-header__toggle-bubble" @click="toggleMenu">
-            <span class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--top" :class="{'ow-header__toggle-bubble-hamburger--top--is-active': isActiveMenu}"></span>
-            <span class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--bottom" :class="{'ow-header__toggle-bubble-hamburger--bottom--is-active': isActiveMenu}"></span>
-          </button>
+        <div class="mobilefix">
+          <div class="ow-header__toggle-bubble-container">
+            <button class="ow-header__toggle-bubble" @click="toggleMenu">
+              <span class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--top" :class="{'ow-header__toggle-bubble-hamburger--top--is-active': isActiveMenu}"></span>
+              <span class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--bottom" :class="{'ow-header__toggle-bubble-hamburger--bottom--is-active': isActiveMenu}"></span>
+            </button>
+          </div>
         </div>
         <div class="ow-header__toggle-bubble-background" :class="{'ow-header__toggle-bubble-background--is-active': isActiveMenu}"></div>
           <ul class="ow-header__menu">
@@ -184,7 +186,7 @@ export default {
   &__toggle-bubble-container {
     visibility: visible;
     background-color: $secondary-color;
-    position: absolute;
+    position: fixed;
     bottom: -10px; 
     right: -10px;
     border-radius: 50%;
@@ -211,12 +213,12 @@ export default {
     left: 0;
     width: 100vw;
     height: 100vh;
-    clip-path: circle(40px at calc(100vw - 29.3px) calc(100vh - 30px));
+    clip-path: circle(40px at calc(100vw - 28px) calc(100vh - 28px));
     transition-timing-function: ease-out;
     transition: clip-path 0.4s;
 
     &--is-active {
-      clip-path: circle(110vh at calc(100vw - 29.3px) calc(100vh - 30px));
+      clip-path: circle(110vh at calc(100vw - 28px) calc(100vh - 28px));
     }
 
     @include fullhd() {
@@ -353,7 +355,8 @@ export default {
       padding: 0;
 
       @include fullhd() {
-        margin-top: 0;
+        margin: auto 0;
+        margin-left: auto;
       }
     }
   }

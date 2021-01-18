@@ -26,7 +26,7 @@
 
   &__image-container {
     border: 1px solid $primary-color;
-    padding-top: 66.66%;
+    padding-top: 66%;
     position: relative; 
     width: 100%;
     margin-bottom: 1rem;

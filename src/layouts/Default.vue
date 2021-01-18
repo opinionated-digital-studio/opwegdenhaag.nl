@@ -35,9 +35,13 @@ export default {
 }
 
 .ow-container {
-  max-width: 1600px;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: 0 10%;
+  padding: 0 5%;
+
+  @include fullhd() {
+    padding: 0 10%;
+  }
 }
 
 .ow-content {
@@ -152,9 +156,14 @@ a {
 .ow-type {
   &__p {
     &--lead {
-      @extend h4;
-      font-weight: 400;
-      margin-top: 0;
+      margin: 1rem 0;
+
+      @include fullhd() {
+        margin-top: 0;
+        font-size: 1.563rem;
+        font-weight: 400;
+        line-height: 1.3;
+      }
     }
   }
 

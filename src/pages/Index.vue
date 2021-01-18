@@ -1,7 +1,7 @@
 <template>
   <Layout :header-style="headerStyle">
     <ow-jumbotron />
-    <div id="blurb" class="ow-container ow-front-page__sticky">
+    <div id="blurb" class="ow-container">
       <div class="ow-blurb ow-front-page__content">
         <div class="ow-blurb__main-image-container">
           <g-image
@@ -15,7 +15,7 @@
               Een maatje voor iedereen die het nodig heeft
             </h2>
           </div>
-          <div class="column is-half">
+          <div class="column">
             <p class="ow-blurb__main-text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
               vitae lacus non sem finibus viverra. Donec ac massa finibus,
@@ -31,7 +31,7 @@
     <div class="ow-front-page__content ow-front-page-cta">
       <div class="ow-container">
         <div class="columns">
-          <div class="column is-one-quarter is-offset-one-quarter">
+          <div class="column is-one-quarter  is-offset-one-quarter">
             <ow-card title="Ik wil helpen" href="/maatje-worden" img="ik-wil-helpen.jpeg">Meld je aan om aan de slag te gaan als maatje</ow-card>
           </div>
           <div class="column is-one-quarter">
@@ -41,51 +41,46 @@
       </div>
     </div>
 
-    <div class="ow-container">
-      <div class="ow-front-page-news-overview ow-front-page__content">
-        <div class="columns">
-          <div class="column is-one-third">
-            <h2 class="h3">Actueel</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              vitae lacus non sem finibus viverra.
-            </p>
-          </div>
-          <div class="column">
-            <ul class="ow-news-list">
-              <li class="ow-news-list__item">
-                <a href="" class="ow-news-list__link">
-                  <div class="ow-news-list__date ow-type__pretitle">
-                    21 Januari 2021
-                  </div>
-                  <div class="ov-news-list__title">
-                    Lorem ipsum dolor isit amet
-                  </div>
-                </a>
-              </li>
-              <li class="ow-news-list__item">
-                <a href="" class="ow-news-list__link">
-                  <div class="ow-news-list__date ow-type__pretitle">
-                    21 Januari 2021
-                  </div>
-                  <div class="ov-news-list__title">
-                    Lorem ipsum dolor isit amet
-                  </div>
-                </a>
-              </li>
-              <li class="ow-news-list__item">
-                <a href="" class="ow-news-list__link">
-                  <div class="ow-news-list__date ow-type__pretitle">
-                    21 Januari 2021
-                  </div>
-                  <div class="ov-news-list__title">
-                    Lorem ipsum dolor isit amet
-                  </div>
-                </a>
-              </li>
-            </ul>
-            <g-link to="/nieuws">Alle nieuwsberichten</g-link>
-          </div>
+    <div class="ow-container ow-front-page-news-overview ow-front-page__content">
+      <div class="columns">
+        <div class="column is-one-third">
+          <h2 class="h3">Actueel</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur repellendus quidem, autem id ex voluptas facere vel sunt. Corporis saepe iusto possimus eum asperiores doloribus magnam autem officia aliquam voluptatem?</p>
+        </div>
+        <div class="column">
+          <ul class="ow-news-list">
+            <li class="ow-news-list__item">
+              <a href="" class="ow-news-list__link">
+                <div class="ow-news-list__date ow-type__pretitle">
+                  21 Januari 2021
+                </div>
+                <div class="ov-news-list__title">
+                  Lorem ipsum dolor isit amet
+                </div>
+              </a>
+            </li>
+            <li class="ow-news-list__item">
+              <a href="" class="ow-news-list__link">
+                <div class="ow-news-list__date ow-type__pretitle">
+                  21 Januari 2021
+                </div>
+                <div class="ov-news-list__title">
+                  Lorem ipsum dolor isit amet
+                </div>
+              </a>
+            </li>
+            <li class="ow-news-list__item">
+              <a href="" class="ow-news-list__link">
+                <div class="ow-news-list__date ow-type__pretitle">
+                  21 Januari 2021
+                </div>
+                <div class="ov-news-list__title">
+                  Lorem ipsum dolor isit amet
+                </div>
+              </a>
+            </li>
+          </ul>
+          <g-link to="/nieuws">Alle nieuwsberichten</g-link>
         </div>
       </div>
     </div>
@@ -186,7 +181,7 @@ export default {
     overflow: hidden;
     border: 1px solid $primary-color;
     padding-top: 56.25%;
-    position: relative; 
+    position: relative;
     width: 100%;
   }
 

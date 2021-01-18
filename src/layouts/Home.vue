@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <the-header :header-style="headerStyle"/>
+    <the-header :header-style="computeHeaderStyle"/>
     <slot />
     <the-footer />
   </div>
@@ -26,5 +26,13 @@ export default {
       default: "white",
     },
   },
+  computed: {
+    computeHeaderStyle: function () {
+      if (window.innerWidth < 1408) {
+        this.headerStyle = "primary"
+      } 
+      return this.headerStyle
+    }
+  }
 };
 </script>

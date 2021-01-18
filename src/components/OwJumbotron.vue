@@ -78,6 +78,8 @@ export default {
     color: $white;
     font-weight: 400;
     position: relative;
+    font-size: 100%;
+    font-family: $font-body;
 
     &:focus {
       background-color: $focus-color !important;

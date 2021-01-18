@@ -137,6 +137,7 @@ export default {
   },
   mounted() {
     if (process.isClient) {
+      this.windowWidth = window.innerWidth
       window.addEventListener("scroll", this.onScroll);
       window.addEventListener("resize", this.onResize)
     }
@@ -148,15 +149,11 @@ export default {
     }
   },
   data() {
-    let windowWidth
-    if (process.isClient) {
-      windowWidth = window.innerWidth
-    }
     return {
       showHeader: true,
       lastScrollPosition: 0,
       isActiveMenu: false,
-      windowWidth: windowWidth
+      windowWidth: null
     };
   },
   computed: {

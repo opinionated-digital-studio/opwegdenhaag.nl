@@ -19,4 +19,7 @@ jobs:
           cd /home/github/deployments/opwegdenhaag.nl
           git pull origin main
           git status
+          export NVM_DIR=~/.nvm
+          source ~/.nvm/nvm.sh
+          npm install
           npm run build

@@ -1,6 +1,7 @@
 node_modules
 .nvimlog
 .env
+dist
 .temp
 .cache
 reference/style/logo/._.DS_Store

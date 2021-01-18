@@ -28,10 +28,12 @@ export default {
   },
   computed: {
     computeHeaderStyle: function () {
-      if (window.innerWidth < 1408) {
-        this.headerStyle = "primary"
-      } 
-      return this.headerStyle
+      if (process.isClient) {
+        if (window.innerWidth < 1408) {
+          this.headerStyle = "primary"
+        } 
+        return this.headerStyle
+      }
     }
   }
 };

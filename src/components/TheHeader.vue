@@ -20,34 +20,61 @@
               'ow-header__nav--parent-hidden': !showHeader,
             },
             {
-              'ow-header__nav--is-active': isActiveMenu
-            }
+              'ow-header__nav--is-active': isActiveMenu,
+            },
           ]"
         >
-        <div class="mobilefix">
-          <div class="ow-header__toggle-bubble-container">
-            <button class="ow-header__toggle-bubble" @click="toggleMenu">
-              <span class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--top" :class="{'ow-header__toggle-bubble-hamburger--top--is-active': isActiveMenu}"></span>
-              <span class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--bottom" :class="{'ow-header__toggle-bubble-hamburger--bottom--is-active': isActiveMenu}"></span>
-            </button>
+          <div class="mobilefix">
+            <div class="ow-header__toggle-bubble-container">
+              <button class="ow-header__toggle-bubble" @click="toggleMenu">
+                <span
+                  class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--top"
+                  :class="{
+                    'ow-header__toggle-bubble-hamburger--top--is-active': isActiveMenu,
+                  }"
+                ></span>
+                <span
+                  class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--bottom"
+                  :class="{
+                    'ow-header__toggle-bubble-hamburger--bottom--is-active': isActiveMenu,
+                  }"
+                ></span>
+              </button>
+            </div>
           </div>
-        </div>
-        <div class="ow-header__toggle-bubble-background" :class="{'ow-header__toggle-bubble-background--is-active': isActiveMenu}"></div>
+          <div
+            class="ow-header__toggle-bubble-background"
+            :class="{
+              'ow-header__toggle-bubble-background--is-active': isActiveMenu,
+            }"
+          ></div>
           <ul class="ow-header__menu">
-            <li class="ow-header__menu-item ow-header__menu-item--logo" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
-              <g-link class="ow-header__home-link ow-header__home-link--mobile" to="/"
+            <li
+              class="ow-header__menu-item ow-header__menu-item--logo"
+              :class="{ 'ow-header__menu-item--is-active': isActiveMenu }"
+            >
+              <g-link
+                class="ow-header__home-link ow-header__home-link--mobile"
+                to="/"
                 ><the-logo header-style="white" width="10rem"
               /></g-link>
             </li>
-            <li class="ow-header__menu-item" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
+            <li
+              class="ow-header__menu-item"
+              style="padding-left: 0"
+              :class="{ 'ow-header__menu-item--is-active': isActiveMenu }"
+            >
               <g-link
-                to="/ik-zoek-een-maatje"
+                to="/ik-wil-hulp"
                 class="ow-header__menu-link"
                 :class="'ow-header__menu-link' + headerModifier"
                 >Ik zoek een maatje</g-link
               >
             </li>
-            <li class="ow-header__menu-item" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
+            <li
+              class="ow-header__menu-item"
+              :class="{ 'ow-header__menu-item--is-active': isActiveMenu }"
+            >
               <g-link
                 to="/steun-ons"
                 class="ow-header__menu-link"
@@ -55,7 +82,10 @@
                 >Steun ons</g-link
               >
             </li>
-            <li class="ow-header__menu-item" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
+            <li
+              class="ow-header__menu-item"
+              :class="{ 'ow-header__menu-item--is-active': isActiveMenu }"
+            >
               <g-link
                 to="/over-ons"
                 class="ow-header__menu-link"
@@ -63,7 +93,10 @@
                 >Over ons</g-link
               >
             </li>
-            <li class="ow-header__menu-item" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
+            <li
+              class="ow-header__menu-item"
+              :class="{ 'ow-header__menu-item--is-active': isActiveMenu }"
+            >
               <g-link
                 to="/nieuws"
                 class="ow-header__menu-link"
@@ -71,8 +104,15 @@
                 >Nieuws</g-link
               >
             </li>
-            <li class="ow-header__menu-item ow-header__menu-item--cta" :class="{'ow-header__menu-item--is-active': isActiveMenu}">
-              <ow-button :color="buttonColorModifier" :size="buttonSizeModifier"  content="Maatje worden" />
+            <li
+              class="ow-header__menu-item ow-header__menu-item--cta"
+              :class="{ 'ow-header__menu-item--is-active': isActiveMenu }"
+            >
+              <ow-button
+                :color="buttonColorModifier"
+                :size="buttonSizeModifier"
+                content="Maatje worden"
+              />
             </li>
           </ul>
         </nav>
@@ -96,16 +136,20 @@ export default {
     },
   },
   mounted() {
-    window.addEventListener("scroll", this.onScroll);
+    if (process.isClient) {
+      window.addEventListener("scroll", this.onScroll);
+    }
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
+    if (process.isClient) {
+      window.removeEventListener("scroll", this.onScroll);
+    }
   },
   data() {
     return {
       showHeader: true,
       lastScrollPosition: 0,
-      isActiveMenu: false
+      isActiveMenu: false,
     };
   },
   computed: {
@@ -123,46 +167,51 @@ export default {
     },
     buttonColorModifier: function () {
       let buttonColorModifier;
-      if (window.innerWidth > 1408) {
-        switch (this.headerStyle) {
-          case "white":
-            buttonColorModifier = "primary";
-            break;
-          case "primary":
-            buttonColorModifier = "white";
-            break;
+      if (process.isClient) {
+        if (window.innerWidth > 1408) {
+          switch (this.headerStyle) {
+            case "white":
+              buttonColorModifier = "primary";
+              break;
+            case "primary":
+              buttonColorModifier = "white";
+              break;
+          }
+        } else {
+          buttonColorModifier = "primary";
         }
-      } else {
-        buttonColorModifier = "primary";
+        return buttonColorModifier;
       }
-      return buttonColorModifier;
     },
-    buttonSizeModifier: function() {
-      let buttonSizeModifier;
-      if (window.innerWidth > 1408) {
-        return 'normal'
-      } else {
-        return 'large'
+    buttonSizeModifier: function () {
+      if (process.isClient) {
+        if (window.innerWidth > 1408) {
+          return "normal";
+        } else {
+          return "large";
+        }
       }
-    }
+    },
   },
   methods: {
     toggleMenu() {
-      this.isActiveMenu = !this.isActiveMenu
+      this.isActiveMenu = !this.isActiveMenu;
     },
     onScroll() {
-      const currentScrollPosition =
-        window.pageYOffset || document.documentElement.scrollTop;
-      if (currentScrollPosition < 0) {
-        return;
+      if (process.isClient) {
+        const currentScrollPosition =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScrollPosition < 0) {
+          return;
+        }
+        if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
+          // Stop executing this function if the difference between
+          // current scroll position and last scroll position is less than some offset
+          return;
+        }
+        this.showHeader = currentScrollPosition < this.lastScrollPosition;
+        this.lastScrollPosition = currentScrollPosition;
       }
-      if (Math.abs(currentScrollPosition - this.lastScrollPosition) < 60) {
-        // Stop executing this function if the difference between
-        // current scroll position and last scroll position is less than some offset
-        return;
-      }
-      this.showHeader = currentScrollPosition < this.lastScrollPosition;
-      this.lastScrollPosition = currentScrollPosition;
     },
   },
 };
@@ -187,7 +236,7 @@ export default {
     visibility: visible;
     background-color: $secondary-color;
     position: fixed;
-    bottom: -10px; 
+    bottom: -10px;
     right: -10px;
     border-radius: 50%;
   }
@@ -213,12 +262,12 @@ export default {
     left: 0;
     width: 100vw;
     height: 100vh;
-    clip-path: circle(40px at calc(100vw - 28px) calc(100vh - 28px));
+    clip-path: circle(40px at calc(100vw - 30px) calc(100vh - 30px));
     transition-timing-function: ease-out;
     transition: clip-path 0.4s;
 
     &--is-active {
-      clip-path: circle(110vh at calc(100vw - 28px) calc(100vh - 28px));
+      clip-path: circle(110vh at calc(100vw - 30px) calc(100vh - 30px));
     }
 
     @include fullhd() {

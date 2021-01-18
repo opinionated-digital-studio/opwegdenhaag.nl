@@ -1,0 +1,21 @@
+name: Deploy opwegdenhaag.nl
+  on:
+    push:
+      branches: [ main ]
+
+  jobs:
+    build:
+      name: Build
+      runs-on: ubuntu-latest
+      steps:
+      - name: pulling repo from GitHub
+        uses: appleboy/ssh-action@master
+        with:
+          host: srv.opinionated.nl
+          username: github
+          key: ${{ secrets.OZANAM_GH }}
+          port: 22
+          script: |
+          cd /home/github/deployments
+          git pull origin main
+          git status

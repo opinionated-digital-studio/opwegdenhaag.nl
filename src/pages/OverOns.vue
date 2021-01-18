@@ -41,7 +41,7 @@ export default {
 
 <static-query>
 query {
-  main(id: "1933b66a7dbd22cbb99e6b069864739b") {
+  main(id: "0de6c9b93fd1acc253ec51e714e8a640") {
     title
     content
   }

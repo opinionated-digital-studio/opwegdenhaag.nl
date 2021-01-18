@@ -6,15 +6,11 @@
     "dev": "gridsome develop",
     "explore": "gridsome explore"
   },
-  "dependencies": {
+  "devDependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.4",
     "bulma": "^0.9.1",
     "gridsome": "^0.7.23",
-    "gridsome-plugin-netlify-cms": "^1.0.9",
-    "netlify-cms": "^2.10.76"
-  },
-  "devDependencies": {
     "date-fns": "^2.16.1",
     "eslint": "^7.15.0",
     "eslint-plugin-gridsome": "^1.5.0",

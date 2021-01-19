@@ -9,4 +9,5 @@ fields:
   name: date
   label: date
 pages:
+- content/pages/ik-wil-hulp.md
 - content/pages/steun-ons.md

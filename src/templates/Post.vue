@@ -11,25 +11,24 @@
     <div class="columns">
       <div class="column is-offset-one-third">
         <div class="ow-page-body">
-          <p class="ow-page__date">Geplaatst op {{formatDate}}</p>
+          <p class="ow-page__date">Geplaatst op {{ formatDate }}</p>
         </div>
       </div>
     </div>
     <div class="columns">
       <div class="column is-one-third">
-        <ow-social-share/>
+        <ow-social-share />
       </div>
       <div class="column">
         <div v-html="$page.post.content"></div>
       </div>
     </div>
-    <div>
-    </div>
+    <div></div>
   </Layout>
 </template>
 
 <script>
-import OwSocialShare from '~/components/OwSocialShare.vue'
+import OwSocialShare from "~/components/OwSocialShare.vue";
 import { format } from "date-fns";
 import { nl } from "date-fns/locale";
 
@@ -37,18 +36,33 @@ export default {
   components: { OwSocialShare },
   metaInfo() {
     return {
-    title: this.$page.post.title,
-    }
+      title: this.$page.post.title,
+      meta: [
+        {
+          key: "og:description",
+          name: "og:description",
+          content: this.$page.post.content,
+        },
+
+        {
+          key: "twitter:description",
+          name: "twitter:description",
+          content: this.$page.post.content,
+        },
+      ],
+    };
   },
   computed: {
-    formatDate: function() {
+    formatDate: function () {
       if (this.$page.post.date) {
-        const date = format(new Date(this.$page.post.date), "d MMMM yyyy", { locale: nl });
-        return date
+        const date = format(new Date(this.$page.post.date), "d MMMM yyyy", {
+          locale: nl,
+        });
+        return date;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <page-query>
@@ -62,14 +76,14 @@ query ($id: ID!) {
 </page-query>
 
 <style lang="scss">
-  .ow-page {
-    &__date {
-      margin-top: 0rem;
-      margin-bottom: 3rem;
+.ow-page {
+  &__date {
+    margin-top: 0rem;
+    margin-bottom: 3rem;
 
-      @include fullhd() {
-        margin-bottom: 4rem;
-      }
+    @include fullhd() {
+      margin-bottom: 4rem;
     }
   }
+}
 </style>

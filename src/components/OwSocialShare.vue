@@ -15,6 +15,11 @@
 <script>
 export default {
   name: "OwSocialShare",
+  data() {
+    return {
+      test: this.$route
+    }
+  }
 };
 </script>
 

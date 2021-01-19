@@ -246,6 +246,19 @@ export default {
   metaInfo() {
     return {
       title: this.$static.main.title,
+      meta: [
+        {
+          key: "og:description",
+          name: "og:description",
+          content: this.$static.main.content,
+        },
+
+        {
+          key: "twitter:description",
+          name: "twitter:description",
+          content: this.$static.main.content,
+        },
+      ],
     };
   },
   data() {

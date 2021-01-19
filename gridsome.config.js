@@ -24,6 +24,8 @@ function addStyleResource(rule) {
 
 module.exports = {
   siteName: 'Op weg Den Haag',
+  siteDescription: "De website van maatjesproject Op Weg van stichting Ozanam 's-Gravenhage",
+  siteUrl: 'https://www.opwegdenhaag.nl',
   chainWebpack(config) {
     // Load variables for all vue-files
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']

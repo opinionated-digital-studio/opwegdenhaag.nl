@@ -10,10 +10,7 @@
     </div>
     <div class="columns">
       <div class="column is-offset-one-third ow-page-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
-        quaerat incidunt soluta sunt earum, numquam deleniti corrupti voluptas
-        magni aliquam voluptates suscipit eum totam ullam ipsam, odit asperiores
-        excepturi minus?
+        <div v-html="$static.main.content"></div>
 
         <form
           method="post"
@@ -248,7 +245,7 @@ export default {
   },
   metaInfo() {
     return {
-      title: "Ik wil hulp",
+      title: this.$static.main.title,
     };
   },
   data() {
@@ -352,3 +349,12 @@ export default {
   },
 };
 </script>
+
+<static-query>
+query {
+  main(id: "3e00bd113dcbe5ada4a1bc117565f098") {
+    title
+    content
+  }
+}
+</static-query>

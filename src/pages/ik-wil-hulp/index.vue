@@ -10,10 +10,7 @@
     </div>
     <div class="columns">
       <div class="column is-offset-one-third ow-page-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita
-        quaerat incidunt soluta sunt earum, numquam deleniti corrupti voluptas
-        magni aliquam voluptates suscipit eum totam ullam ipsam, odit asperiores
-        excepturi minus?
+        <div v-html="$static.main.content"></div>
 
         <form method="post" class="ow-sign-up-form" autocomplete="on" novalidate @submit.prevent="submitForm">
           <div id="error-callout" v-if="showErrorCallout" class="ow-callout ow-callout--error">
@@ -261,3 +258,12 @@ export default {
   }
 };
 </script>
+
+<static-query>
+query {
+  main(id: "bce67248588b01888c2d79168f8d6677") {
+    title
+    content
+  }
+}
+</static-query>

@@ -52,8 +52,8 @@
 
       <div class="ow-footer__end">
         <small>
-          <g-link to="/" class="ow-footer__end-link">Privacy</g-link>
-          <g-link to="/" class="ow-footer__end-link">Disclaimer</g-link>
+          <g-link to="/privacy" class="ow-footer__end-link">Privacy</g-link>
+          <g-link to="/disclaimer" class="ow-footer__end-link">Disclaimer</g-link>
 
           <div class="ow-footer__end-copyright">&copy; Stichting Ozanam 's-Gravenhage {{getCurrentYear}}</div>
         </small>

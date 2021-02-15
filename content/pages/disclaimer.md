@@ -1,8 +1,11 @@
 ---
 title: Disclaimer
-date: 2021-01-19T00:00:00+01:00
+date: 2021-01-19T00:00:00.000+01:00
 
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet sagittis urna non tempus. Donec egestas arcu quis enim luctus, malesuada vestibulum leo hendrerit. Maecenas quam metus, sodales vel interdum ac, euismod eget elit. Cras nisl metus, tincidunt nec mollis et, interdum a nulla. Quisque rutrum, ex ac egestas sodales, orci risus gravida augue, in semper nulla nunc eget leo. Nulla facilisi. Aenean ac semper leo, vitae finibus sapien. Integer dolor neque, dapibus nec tellus ut, dictum fermentum velit. Integer libero eros, sollicitudin eget consectetur a, varius a lectus.
+**Op Weg** brengt vrijwilligers in contact met mensen die een eerste psychose hebben gehad, zich eenzaam voelen en in Den Haag  wonen.  
+Onze vrijwilliger biedt een luisterend oor en spreekt af om samen met zijn "Maatje" iets leuks te doen buiten de deur..
 
-Vestibulum pulvinar leo ac massa bibendum mollis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vestibulum, mi id condimentum volutpat, augue eros commodo velit, vel fermentum arcu nunc a purus. Sed suscipit, felis a mollis dictum, dolor sem lacinia lectus, id volutpat nunc nibh et mi. Donec laoreet sapien ante, non semper elit tincidunt quis. Sed pulvinar massa eu orci porttitor congue. Nullam vestibulum libero felis, ut commodo leo gravida ut. Cras eget sapien quis tortor commodo suscipit. Pellentesque bibendum tincidunt pulvinar.
+Het contact is wekelijks of om de week gedurende een jaar. Samen wordt gezocht naar **meer mogelijkheden om andere mensen te ontmoeten**. Ook op deze website zijn mogelijke vervolgactiviteiten opgenomen. Samen met je Maatje ga je op pad om deze mogelijkheden te verkennen! 
+
+Op Weg  maakt onderdeel uit van het [Platform Zorgvrijwilligers](http://www.platformzorgvrijwilligers.nl/).

@@ -3,9 +3,18 @@ title: Disclaimer
 date: 2021-01-19T00:00:00.000+01:00
 
 ---
-**Op Weg** brengt vrijwilligers in contact met mensen die een eerste psychose hebben gehad, zich eenzaam voelen en in Den Haag  wonen.  
-Onze vrijwilliger biedt een luisterend oor en spreekt af om samen met zijn "Maatje" iets leuks te doen buiten de deur..
+Auteursrecht
 
-Het contact is wekelijks of om de week gedurende een jaar. Samen wordt gezocht naar **meer mogelijkheden om andere mensen te ontmoeten**. Ook op deze website zijn mogelijke vervolgactiviteiten opgenomen. Samen met je Maatje ga je op pad om deze mogelijkheden te verkennen! 
+Niets van deze website mag zonder voorafgaande schriftelijke toestemming van de eigenaar worden openbaar gemaakt of verveelvoudigd, waaronder begrepen het reproduceren door middel van druk, offset, fotokopie of microfilm of in enige digitale, elektronische, optische of andere vorm of (en dit geldt zonodig in aanvulling op het auteursrecht) het reproduceren (i) ten behoeve van een onderneming, organisatie of instelling of (ii) voor eigen oefening, studie of gebruik welk(e) niet strikt privé van aard is of (iii) voor het overnemen in enig dag-, nieuws- of weekblad of tijdschrift (al of niet in digitale vorm of online) of in een RTV-uitzending.
 
-Op Weg  maakt onderdeel uit van het [Platform Zorgvrijwilligers](http://www.platformzorgvrijwilligers.nl/).
+### Uw bijdrage
+
+Op iedere inzending van een bijdrage of informatie aan Stichting Ozanam en/of Maatjesproject Op Weg zijn de standaard-publicatievoorwaarden van toepassing. Inzending van een bijdrage impliceert steeds toestemming aan de eigenaar om de bijdrage geheel of gedeeltelijk verder te exploiteren door opname en/of publicatie in enige databank, informatiedrager (al of niet elektronisch) of middels on-line beschikbaarstelling in enig netwerk.
+
+### Vertrouwelijk
+
+Alle gegevens die door Stichting Ozanam en/of Maatjesproject Op Weg worden verzameld, zullen strikt vertrouwelijk bewaard worden en zullen niet worden uitgeleend, verhuurd of verkocht, noch op een of andere manier worden openbaar gemaakt. De informatie die u aan Stichting Ozanam en/of Maatjesproject Op Weg geeft, zal met de grootst mogelijke zorg worden behandeld.
+
+### Links
+
+Onze sites bevatten links naar andere sites die niet tot het eigendom van Stichting Ozanam en/of Maatjesproject Op Weg .Wij zijn niet aansprakelijk voor de privacy praktijken noch de inhoud van zulke sites.

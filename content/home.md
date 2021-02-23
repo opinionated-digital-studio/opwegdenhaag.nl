@@ -1,5 +1,5 @@
 ---
-kop_groot: Lorem ipsum dolor sit amet
+kop_groot: Maatjesproject Op Weg - website voor deelnemers en vrijwilligers
 kop_ondertitel: Onze opgeleide maatjes helpen voormalige patienten van het Centrum
   Eerste Psychose op weg naar zelfstandigheid en herstel in de maatschappij
 samenvatting: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae

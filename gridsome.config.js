@@ -78,5 +78,17 @@ module.exports = {
         }
       }
     },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: './content/pages/home.md',
+        typeName: 'Home',
+        remark: {
+          plugins: [
+            // ...local plugins
+          ]
+        }
+      }
+    },
   ]
 }

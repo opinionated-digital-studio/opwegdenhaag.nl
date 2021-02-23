@@ -1,4 +1,36 @@
 ---
 label: Home
 hide_body: true
-fields: []
+fields:
+- name: kop_groot
+  type: text
+  config:
+    required: false
+  label: Kop groot
+- name: kop_ondertitel
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Kop ondertitel
+- name: samenvatting
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Samenvatting
+- name: samenvatting_actueel
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Samenvatting actueel

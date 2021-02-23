@@ -8,8 +8,8 @@ samenvatting: 'Een maatje is een vrijwilliger die voor een periode van ten minst
   film of het museum gaan. Noem maar op, zolang jullie er allebei maar plezier aan
   beleven, want daar draait het maatjesproject om. Het is een vorm van georganiseerde
   vriendschap: een maatje is een kameraad, géén hulpverlener.'
-samenvatting_actueel: Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
-  repellendus quidem, autem id ex voluptas facere vel sunt. Corporis saepe iusto possimus
-  eum asperiores doloribus magnam autem officia aliquam voluptatem?
+samenvatting_actueel: In deze rubriek vind je de laatste nieuwsberichten over het
+  Maatjesproject Op Weg en informatie over allerlei zaken die te maken hebben met
+  de zorg voor mensen die een eerste psychose hebben gehad.
 
 ---

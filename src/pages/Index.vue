@@ -17,11 +17,7 @@
           </div>
           <div class="column">
             <p class="ow-blurb__main-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-              vitae lacus non sem finibus viverra. Donec ac massa finibus,
-              mollis nisi vitae, maximus dui. Pellentesque blandit leo orci, vel
-              tempus libero semper nec. Praesent eget faucibus sem, et pulvinar
-              ex. Suspendisse lacinia nisl a ullamcorper lacinia.
+              {{ $page.home.samenvatting }}
             </p>
           </div>
         </div>
@@ -31,24 +27,40 @@
     <div class="ow-front-page__content ow-front-page-cta">
       <div class="ow-container">
         <div class="columns is-desktop">
-          <div class="column is-one-quarter-fullhd is-offset-one-quarter-fullhd">
-            <ow-card title="Ik wil helpen" href="/maatje-worden" img="ik-wil-helpen.jpeg">Meld je aan om aan de slag te gaan als maatje</ow-card>
+          <div
+            class="column is-one-quarter-fullhd is-offset-one-quarter-fullhd"
+          >
+            <ow-card
+              title="Ik wil helpen"
+              href="/maatje-worden"
+              img="ik-wil-helpen.jpeg"
+              >Meld je aan om aan de slag te gaan als maatje</ow-card
+            >
           </div>
           <div class="column is-one-quarter-fullhd">
-            <ow-card title="Ik wil hulp" href="/ik-wil-hulp" img="direct-aanmelden.jpg">Meld jezelf of jouw cliënt aan om hulp te krijgen</ow-card>
+            <ow-card
+              title="Ik wil hulp"
+              href="/ik-wil-hulp"
+              img="direct-aanmelden.jpg"
+              >Meld jezelf of jouw cliënt aan om hulp te krijgen</ow-card
+            >
           </div>
         </div>
       </div>
     </div>
 
-    <div class="ow-container ow-front-page-news-overview ow-front-page__content">
+    <div
+      class="ow-container ow-front-page-news-overview ow-front-page__content"
+    >
       <div class="columns">
         <div class="column is-one-third">
           <h2 class="h3">Actueel</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur repellendus quidem, autem id ex voluptas facere vel sunt. Corporis saepe iusto possimus eum asperiores doloribus magnam autem officia aliquam voluptatem?</p>
+          <p>
+            {{ $page.home.samenvatting_actueel }}
+          </p>
         </div>
         <div class="column">
-          <ow-news-list :content="$page.posts.edges"/>
+          <ow-news-list :content="$page.posts.edges" />
           <g-link to="/nieuws">Alle nieuwsberichten</g-link>
         </div>
       </div>
@@ -61,11 +73,11 @@ import OwJumbotron from "~/components/OwJumbotron.vue";
 import OwButton from "~/components/OwButton.vue";
 import Layout from "~/layouts/Home.vue";
 import OwCard from "../components/OwCard.vue";
-import OwNewsList from '../components/OwNewsList.vue';
+import OwNewsList from "../components/OwNewsList.vue";
 
 export default {
   metaInfo: {
-    title: "Startpagina",
+    title: "Startpagina"
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
@@ -82,14 +94,14 @@ export default {
       } else {
         this.headerStyle = "primary";
       }
-    },
+    }
   },
   components: { Layout, OwJumbotron, OwButton, OwCard, OwNewsList },
   data() {
     return {
-      headerStyle: "primary",
+      headerStyle: "primary"
     };
-  },
+  }
 };
 </script>
 
@@ -204,6 +216,9 @@ query {
       }
     }
   }
+  home: home(id: "14b844fa207042add04d39881b895615") {
+    samenvatting
+    samenvatting_actueel
+  }
 }
-
 </page-query>

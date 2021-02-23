@@ -5,9 +5,7 @@
         <div class="columns">
           <div class="column is-one-third">
             <p class="ow-footer__blurb">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non
-              consequat libero. Cras fermentum fringilla scelerisque. Fusce sed
-              nisi nec metus porta egestas id eu urna.
+              {{ $static.home.samenvatting }}
             </p>
           </div>
           <div class="column">
@@ -19,13 +17,19 @@
                   >
                 </li>
                 <li class="ow-footer__menu-item">
-                  <g-link to="/steun-ons" class="ow-footer__menu-link">Steun ons</g-link>
+                  <g-link to="/steun-ons" class="ow-footer__menu-link"
+                    >Steun ons</g-link
+                  >
                 </li>
                 <li class="ow-footer__menu-item">
-                  <g-link to="/over-ons" class="ow-footer__menu-link">Over ons</g-link>
+                  <g-link to="/over-ons" class="ow-footer__menu-link"
+                    >Over ons</g-link
+                  >
                 </li>
                 <li class="ow-footer__menu-item">
-                  <g-link to="/nieuws" class="ow-footer__menu-link">Nieuws</g-link>
+                  <g-link to="/nieuws" class="ow-footer__menu-link"
+                    >Nieuws</g-link
+                  >
                 </li>
                 <li class="ow-footer__menu-item">
                   <g-link to="/maatje-worden" class="ow-footer__menu-link"
@@ -53,9 +57,13 @@
       <div class="ow-footer__end">
         <small>
           <g-link to="/privacy" class="ow-footer__end-link">Privacy</g-link>
-          <g-link to="/disclaimer" class="ow-footer__end-link">Disclaimer</g-link>
+          <g-link to="/disclaimer" class="ow-footer__end-link"
+            >Disclaimer</g-link
+          >
 
-          <div class="ow-footer__end-copyright">&copy; Stichting Ozanam 's-Gravenhage {{getCurrentYear}}</div>
+          <div class="ow-footer__end-copyright">
+            &copy; Stichting Ozanam 's-Gravenhage {{ getCurrentYear }}
+          </div>
         </small>
       </div>
     </div>
@@ -123,10 +131,18 @@ export default {
   name: "the-footer",
   computed: {
     getCurrentYear: function() {
-      const date = new Date()
-      const year = date.getFullYear()
-      return year
+      const date = new Date();
+      const year = date.getFullYear();
+      return year;
     }
   }
 };
 </script>
+
+<static-query>
+query {
+  home: home(id: "14b844fa207042add04d39881b895615") {
+    samenvatting
+  }
+}
+</static-query>

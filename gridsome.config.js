@@ -81,7 +81,7 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: './content/pages/home.md',
+        path: './content/home.md',
         typeName: 'Home',
         remark: {
           plugins: [

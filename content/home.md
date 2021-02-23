@@ -11,4 +11,3 @@ samenvatting_actueel: Lorem ipsum dolor sit amet consectetur adipisicing elit. A
   eum asperiores doloribus magnam autem officia aliquam voluptatem?
 
 ---
-test

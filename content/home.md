@@ -1,5 +1,5 @@
 ---
-kop_groot: Lorem ipsum dolor sit test
+kop_groot: Lorem ipsum dolor sit amet
 kop_ondertitel: Onze opgeleide maatjes helpen voormalige patienten van het Centrum
   Eerste Psychose op weg naar zelfstandigheid en herstel in de maatschappij
 samenvatting: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae

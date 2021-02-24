@@ -1,6 +1,7 @@
 <template>
   <div class="layout">
-    <the-header  />
+    <the-skip-link />
+    <the-header />
     <div class="ow-content--default" id="main">
       <div class="ow-container">
         <slot />
@@ -21,8 +22,10 @@ query {
 <script>
 import TheHeader from "~/components/TheHeader";
 import TheFooter from "~/components/TheFooter";
+import TheSkipLink from "~/components/TheSkipLink";
+
 export default {
-  components: { TheHeader, TheFooter },
+  components: { TheHeader, TheFooter, TheSkipLink }
 };
 </script>
 
@@ -31,7 +34,7 @@ export default {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  justify-content: space-between 
+  justify-content: space-between;
 }
 
 .ow-container {

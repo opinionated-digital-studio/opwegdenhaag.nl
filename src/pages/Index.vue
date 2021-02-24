@@ -1,6 +1,6 @@
 <template>
   <Layout :header-style="headerStyle">
-    <ow-jumbotron />
+    <ow-jumbotron id="main" />
     <div id="blurb" class="ow-container">
       <div class="ow-blurb ow-front-page__content">
         <div class="ow-blurb__main-image-container">

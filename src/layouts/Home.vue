@@ -1,6 +1,7 @@
 <template>
   <div class="layout">
-    <the-header :header-style="computeHeaderStyle"/>
+    <the-skip-link />
+    <the-header :header-style="computeHeaderStyle" />
     <slot />
     <the-footer />
   </div>
@@ -17,25 +18,27 @@ query {
 <script>
 import TheHeader from "~/components/TheHeader";
 import TheFooter from "~/components/TheFooter";
+import TheSkipLink from "~/components/TheSkipLink";
+
 export default {
-  components: { TheHeader, TheFooter },
+  components: { TheHeader, TheFooter, TheSkipLink },
   props: {
     headerStyle: {
       type: String,
       required: false,
-      default: "primary",
-    },
+      default: "primary"
+    }
   },
   computed: {
-    computeHeaderStyle: function () {
+    computeHeaderStyle: function() {
       if (process.isClient) {
         if (window.innerWidth < 1408) {
-          this.headerStyle = "primary"
-        } 
-        return this.headerStyle
+          this.headerStyle = "primary";
+        }
+        return this.headerStyle;
       } else {
-        this.headerStyle = "primary"
-        return this.headerStyle
+        this.headerStyle = "primary";
+        return this.headerStyle;
       }
     }
   }

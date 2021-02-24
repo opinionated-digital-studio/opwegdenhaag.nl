@@ -5,7 +5,9 @@
         <div class="columns">
           <div class="column is-one-third">
             <p class="ow-footer__blurb">
-              {{ $static.home.samenvatting }}
+              De opgeleide maatjes van Op Weg helpen voormalige patienten van
+              het Centrum Eerste Psychose op weg naar zelfstandigheid en herstel
+              in de maatschappij.
             </p>
           </div>
           <div class="column">

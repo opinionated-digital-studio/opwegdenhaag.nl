@@ -16,6 +16,8 @@
       </div>
     </div>
     <svg
+      id="circle-left"
+      :style="`transform: translateY(${circleLeftYOffset}px)`"
       class="ow-jumbotron__circle ow-jumbotron__circle--left"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 500 500"
@@ -25,6 +27,8 @@
       </g>
     </svg>
     <svg
+      id="circle-right"
+      :style="`transform: translateY(${circleRightYOffset}px)`"
       class="ow-jumbotron__circle ow-jumbotron__circle--right"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 500 500"
@@ -39,11 +43,31 @@
 <script>
 export default {
   name: "OwJumbotron",
+  mounted() {
+    window.addEventListener("scroll", this.transformBubbles);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.transformBubbles);
+  },
+  data() {
+    return {
+      circleLeftYOffset: 0,
+      circleRightYOffset: 0
+    };
+  },
   methods: {
     scrollToBlurb: function() {
       document.querySelector("#blurb").scrollIntoView({
         behavior: "smooth"
       });
+    },
+    transformBubbles: function(e) {
+      const bubbleLeft = document.getElementById("circle-left");
+      const bubbleRight = document.getElementById("circle-right");
+      const bubbleLeftScrollFactor = window.pageYOffset * 0.5;
+      const bubbleRightScrollFactor = window.pageYOffset * 0.2;
+      this.circleLeftYOffset = bubbleLeftScrollFactor * -1;
+      this.circleRightYOffset = bubbleRightScrollFactor * -1;
     }
   }
 };
@@ -56,6 +80,13 @@ export default {
   padding: 6rem 0 14rem 0;
   position: relative;
   overflow: hidden;
+
+  &__title,
+  &__lead,
+  &__link {
+    position: relative;
+    z-index: 1000;
+  }
 
   &__title {
     color: $white;

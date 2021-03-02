@@ -1,10 +1,24 @@
 ---
 title: Steun ons
-date: 2021-01-19T00:00:00+01:00
+date: 2021-01-19T00:00:00.000+01:00
 
 ---
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque imperdiet sagittis urna non tempus. Donec egestas arcu quis enim luctus, malesuada vestibulum leo hendrerit. Maecenas quam metus, sodales vel interdum ac, euismod eget elit. Cras nisl metus, tincidunt nec mollis et, interdum a nulla.
+Doneren aan Op Weg ...steun ons bijzonder maatschappelijk werk!
 
-## Doneren
+Onze vrijwilligers zijn actief om ieder mens te laten meetellen. Voor elk bedrag dat u kunt missen heeft u de mogelijkheid ons werk te ondersteunen.  
+  
+**Structureel doneren  
+**Maatjesproject Op Weg krijgt voor het grootste deel geld via subsidies en fondsen. We proberen de financiële basis van ons project te versterken door het aantrekken van donateurs die bereid zijn ons werk voor langere tijd te ondersteunen, met een kleine bijdrage van bijvoorbeeld 10 euro per maand.  
+  
+**Doneren via overmaking**  
+U kunt een bijdrage overmaken via IBAN-nummer:
 
-Vestibulum pulvinar leo ac massa bibendum mollis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque vestibulum, mi id condimentum volutpat, augue eros commodo velit, vel fermentum arcu nunc a purus. Sed suscipit, felis a mollis dictum, dolor sem lacinia lectus, id volutpat nunc nibh et mi. Donec laoreet sapien ante, non semper elit tincidunt quis. Sed pulvinar massa eu orci porttitor congue. Nullam vestibulum libero felis, ut commodo leo gravida ut. Cras eget sapien quis tortor commodo suscipit. Pellentesque bibendum tincidunt pulvinar.
+* NL47INGB0005801423 t.n.v. Ozanam Den Haag te Den Haag o.v.v. Donatie aan Maatjesproject Op Weg.
+
+**Doneren via iDEAL**  
+Met iDEAL kunt u direct uw donatie overmaken via uw bank aan Maatjesproject Vivaldi.
+
+* Het minimum bedrag per donatie bedraagt € 1,00.
+* Het eerste invulveld is voor hele eurobedragen en het tweede invulveld voor eurocenten.
+
+Alvast hartelijk dank voor uw bijdrage!

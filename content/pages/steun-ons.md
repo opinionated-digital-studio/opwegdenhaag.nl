@@ -16,7 +16,7 @@ U kunt een bijdrage overmaken via IBAN-nummer:
 * NL47INGB0005801423 t.n.v. Ozanam Den Haag te Den Haag o.v.v. Donatie aan Maatjesproject Op Weg.
 
 **Doneren via iDEAL**  
-Met iDEAL kunt u direct uw donatie overmaken via uw bank aan Maatjesproject Vivaldi.
+Met iDEAL kunt u direct uw donatie overmaken via uw bank aan Maatjesproject Op Weg.
 
 * Het minimum bedrag per donatie bedraagt € 1,00.
 * Het eerste invulveld is voor hele eurobedragen en het tweede invulveld voor eurocenten.

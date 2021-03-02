@@ -1,6 +1,7 @@
 ---
-kop_groot: Maatjesproject Op Weg - website voor deelnemers en vrijwilligers
-kop_ondertitel: Onze opgeleide maatjes helpen voormalige patienten van het Centrum
+kop_groot: Maatjesproject Op Weg - koppelt Maatjes aan mensen die herstellen van een
+  eerste psychose
+kop_ondertitel: Onze opgeleide maatjes helpen voormalige patiënten van het Centrum
   Eerste Psychose op weg naar zelfstandigheid en herstel in de maatschappij
 samenvatting: 'Een maatje is een vrijwilliger die voor een periode van ten minste
   een jaar regelmatig optrekt met een cliënt. Wat dat precies inhoudt? Eigenlijk vooral

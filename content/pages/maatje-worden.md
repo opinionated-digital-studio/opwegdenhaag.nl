@@ -8,7 +8,7 @@ Op Weg is op zoek naar enthousiaste vrijwilligers die het leuk vinden om samen m
 _Wat doet een vrijwilliger?_  
 Als vrijwilliger (maatje) spreek je een keer per week of om de week af met je cliënt om een activiteit te ondernemen en te werken aan doelen. Denk hierbij aan een kopje koffie drinken, maar ook actief op zoek naar gaan dingen die de hulpvrager wilt bereiken. Daarnaast bied je een luisterend oor aan jouw maatje en zoek je samen naar meer mogelijkheden om andere mensen te ontmoeten.
 
-Wat wordt er van jou verwacht?
+_Wat wordt er van jou verwacht?_
 
 * Warm, hartelijk en nieuwsgierig aan de ander
 * Gemotiveerd, enthousiast en open
@@ -19,7 +19,7 @@ Wat wordt er van jou verwacht?
 * Eventuele kennis van psychoses, maar dit is geen vereiste
 * 18 jaar of ouder
 * Een dagdeel per week beschikbaar voor tenminste een jaar
-* Bereid om [scholing](https://opwegdenhaag.nl/admin/#/pages/content-pages-cursus-md/ "Scholing") en [intervisie ](https://opwegdenhaag.nl/admin/#/pages/content-pages-intervisie-md/ "Intervisie")te volgen
+* Bereid om scholing en intervisie te volgen
 
 Cursus  
 Op Weg biedt, naast de basistraining voor vrijwilligers een korte cursus aan van een dagdeel voor nieuwe vrijwilligers. De cursus is bedoeld om meer inzicht te krijgen in wat een psychose nou precies is, hoe je in moeilijke situaties kan handelen en hoe je meer inzicht krijgt in jouw eigen mogelijkheden.
@@ -32,13 +32,10 @@ Tijdens de contactperiode van een jaar zijn er evaluatiemomenten met de projectl
 
 _Wat biedt dit project voor jou?_
 
-· Zinvol vrijwilligerswerk dat veel voldoening geeft
-
-· Uitwisseling van ervaringen met collega-vrijwilligers
-
-· Ondersteuning en begeleiding
-
-· Leerzame ontwikkeling en CV-builder
+* Zinvol vrijwilligerswerk dat veel voldoening geeft
+* Uitwisseling van ervaringen met collega-vrijwilligers
+* Ondersteuning en begeleiding
+* Leerzame ontwikkeling en CV-builder
 
 Ben je geïnteresseerd geraakt in het vrijwilligerswerk? Of heb je vragen?  
 Neem dan contact met ons op, we zien graag je aanmelding tegemoet!

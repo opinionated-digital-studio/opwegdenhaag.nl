@@ -12,15 +12,33 @@
       <div class="column is-offset-one-third ow-page-body">
         <div v-html="$static.main.content"></div>
 
-        <form method="post" class="ow-sign-up-form" autocomplete="on" novalidate @submit.prevent="submitForm">
-          <div id="error-callout" v-if="showErrorCallout" class="ow-callout ow-callout--error">
+        <form
+          method="post"
+          class="ow-sign-up-form"
+          autocomplete="on"
+          novalidate
+          @submit.prevent="submitForm"
+          action="https://api.formcake.com/api/form/68a20c4e-faa2-4b61-9999-74ee1612f3c9/submission"
+        >
+          <div
+            id="error-callout"
+            v-if="showErrorCallout"
+            class="ow-callout ow-callout--error"
+          >
             <h2 class="ow-callout__title ow-callout__title--error">
               Er is een probleem
             </h2>
             <ul class="ow-callout__error-list">
-              <li v-for="(errorMessage, name) in errors" :key="name" class="ow-callout__error-list-item">
-                <a v-if="errorMessage" class="ow-callout__error-list-link" :href="'#' + name"
-                  >{{errorMessage}}</a
+              <li
+                v-for="(errorMessage, name) in errors"
+                :key="name"
+                class="ow-callout__error-list-item"
+              >
+                <a
+                  v-if="errorMessage"
+                  class="ow-callout__error-list-link"
+                  :href="'#' + name"
+                  >{{ errorMessage }}</a
                 >
               </li>
             </ul>
@@ -29,7 +47,7 @@
             <label class="ow-form-label" for="name">Naam</label>
             <input
               class="ow-input"
-              :class="{'ow-input--error': $v.name.$error}"
+              :class="{ 'ow-input--error': $v.name.$error }"
               type="text"
               id="name"
               name="name"
@@ -39,14 +57,19 @@
               :aria-describedby="$v.name.$error ? 'name-error' : false"
               @blur="$v.name.$touch()"
             />
-            <span v-if="$v.name.$error && compileErrors.name" id="name-error" class="ow-input__error-label">{{compileErrors.name}}</span>
+            <span
+              v-if="$v.name.$error && compileErrors.name"
+              id="name-error"
+              class="ow-input__error-label"
+              >{{ compileErrors.name }}</span
+            >
           </div>
 
           <div class="ow-form-group">
             <label class="ow-form-label" for="email">Emailadres</label>
             <input
               class="ow-input"
-              :class="{'ow-input--error': $v.email.$error}"
+              :class="{ 'ow-input--error': $v.email.$error }"
               type="text"
               id="email"
               name="email"
@@ -56,14 +79,19 @@
               @blur="$v.email.$touch()"
               :aria-describedby="$v.email.$error ? 'email-error' : false"
             />
-            <span v-if="$v.email.$error && compileErrors.email" id="email-error" class="ow-input__error-label">{{compileErrors.email}}</span>
+            <span
+              v-if="$v.email.$error && compileErrors.email"
+              id="email-error"
+              class="ow-input__error-label"
+              >{{ compileErrors.email }}</span
+            >
           </div>
 
           <div class="ow-form-group">
             <label class="ow-form-label" for="tel">Telefoonnummer</label>
             <input
               class="ow-input"
-              :class="{'ow-input--error': $v.tel.$error}"
+              :class="{ 'ow-input--error': $v.tel.$error }"
               type="text"
               id="tel"
               name="tel"
@@ -73,14 +101,17 @@
               :aria-describedby="$v.tel.$error ? 'tel-error' : false"
               @blur="$v.tel.$touch()"
             />
-            <span v-if="$v.tel.$error && compileErrors.tel" id="tel-error" class="ow-input__error-label">{{compileErrors.tel}}</span>
+            <span
+              v-if="$v.tel.$error && compileErrors.tel"
+              id="tel-error"
+              class="ow-input__error-label"
+              >{{ compileErrors.tel }}</span
+            >
           </div>
 
           <p class="ow-sign-up-form__disclaimer">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            doloribus, ullam blanditiis cum voluptatum reiciendis magni neque
-            aspernatur laudantium, hic pariatur! Minima necessitatibus
-            temporibus eaque, possimus perferendis nulla laborum quisquam.
+            Jouw privacy wordt serieus genomen. Door je aan te melden ga je
+            akkoord met ons <g-link to="/privacy">privacybeleid</g-link>.
           </p>
 
           <ow-button type="submit" content="Aanmelden" />
@@ -171,11 +202,11 @@
 
 <script>
 import OwButton from "~/components/OwButton.vue";
-import { required, email, minLength } from 'vuelidate/lib/validators'
+import { required, email, minLength } from "vuelidate/lib/validators";
 
 export default {
   components: {
-    OwButton,
+    OwButton
   },
   metaInfo() {
     return {
@@ -184,29 +215,29 @@ export default {
         {
           key: "og:description",
           name: "og:description",
-          content: this.$static.main.content,
+          content: this.$static.main.content
         },
 
         {
           key: "twitter:description",
           name: "twitter:description",
-          content: this.$static.main.content,
-        },
-      ],
+          content: this.$static.main.content
+        }
+      ]
     };
   },
   data() {
     return {
-      name: '',
-      email: '',
-      tel: '',
+      name: "",
+      email: "",
+      tel: "",
       showErrorCallout: false,
       errors: {
-        name: '',
-        email: '',
-        tel: ''
+        name: "",
+        email: "",
+        tel: ""
       }
-    }
+    };
   },
   validations: {
     name: {
@@ -222,51 +253,52 @@ export default {
     }
   },
   methods: {
-    submitForm: async function() {
-      this.$v.$touch()
+    submitForm: async function(e) {
+      this.$v.$touch();
       if (this.$v.$invalid) {
-        this.showErrorCallout = true
-        this.errors.name = this.compileErrors.name
-        this.errors.email = this.compileErrors.email
-        this.errors.tel = this.compileErrors.tel
-        document.querySelector('#main').scrollIntoView({
-          behavior: 'smooth'
+        this.showErrorCallout = true;
+        this.errors.name = this.compileErrors.name;
+        this.errors.email = this.compileErrors.email;
+        this.errors.tel = this.compileErrors.tel;
+        document.querySelector("#main").scrollIntoView({
+          behavior: "smooth"
         });
       } else {
-        this.showErrorCallout = false
-        this.$router.push('/ik-wil-hulp/success')
+        this.showErrorCallout = false;
+        e.currentTarget.submit();
       }
     }
   },
   computed: {
     compileErrors: function() {
-      let nameError, emailError, telError
+      let nameError, emailError, telError;
 
       if (!this.$v.name.required) {
-        nameError = 'Je moet je naam invullen'
+        nameError = "Je moet je naam invullen";
       }
 
       if (!this.$v.email.required) {
-        emailError = 'Je moet je emailadres invullen'
+        emailError = "Je moet je emailadres invullen";
       }
 
       if (!this.$v.email.email) {
-        emailError = 'Je moet een geldig emailadres invullen'
+        emailError = "Je moet een geldig emailadres invullen";
       }
 
       if (!this.$v.tel.required) {
-        telError = 'Je moet je telefoonnummer invullen'
+        telError = "Je moet je telefoonnummer invullen";
       }
 
       if (!this.$v.tel.minLength) {
-        telError = 'Je moet een telefoonnummer invullen met ten minste 10 nummers'
+        telError =
+          "Je moet een telefoonnummer invullen met ten minste 10 nummers";
       }
 
       return {
         name: nameError,
         email: emailError,
         tel: telError
-      }
+      };
     }
   }
 };

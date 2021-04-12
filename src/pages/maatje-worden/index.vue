@@ -18,6 +18,7 @@
           autocomplete="on"
           novalidate
           @submit.prevent="submitForm"
+          action="https://api.formcake.com/api/form/c5da34d9-089b-4cc2-bfa7-82b5eb86d835/submission"
         >
           <div
             id="error-callout"
@@ -118,7 +119,9 @@
               cols="30"
               rows="10"
               v-model="motivation"
-              :aria-describedby="$v.motivation.$error ? 'motivation-error' : false"
+              :aria-describedby="
+                $v.motivation.$error ? 'motivation-error' : false
+              "
               @blur="$v.motivation.$touch()"
               @input="checkMotivationMaxChars"
             ></textarea>
@@ -134,10 +137,8 @@
           </div>
 
           <p class="ow-sign-up-form__disclaimer">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            doloribus, ullam blanditiis cum voluptatum reiciendis magni neque
-            aspernatur laudantium, hic pariatur! Minima necessitatibus
-            temporibus eaque, possimus perferendis nulla laborum quisquam.
+            Jouw privacy wordt serieus genomen. Door je aan te melden ga je
+            akkoord met ons <g-link to="/privacy">privacybeleid</g-link>.
           </p>
 
           <ow-button type="submit" content="Aanmelden" />
@@ -236,12 +237,12 @@ import {
   required,
   email,
   minLength,
-  maxLength,
+  maxLength
 } from "vuelidate/lib/validators";
 
 export default {
   components: {
-    OwButton,
+    OwButton
   },
   metaInfo() {
     return {
@@ -250,15 +251,15 @@ export default {
         {
           key: "og:description",
           name: "og:description",
-          content: this.$static.main.content,
+          content: this.$static.main.content
         },
 
         {
           key: "twitter:description",
           name: "twitter:description",
-          content: this.$static.main.content,
-        },
-      ],
+          content: this.$static.main.content
+        }
+      ]
     };
   },
   data() {
@@ -273,28 +274,28 @@ export default {
         email: "",
         tel: "",
         motivation: ""
-      },
+      }
     };
   },
   validations: {
     name: {
-      required,
+      required
     },
     email: {
       email,
-      required,
+      required
     },
     tel: {
       required,
-      minLength: minLength(10),
+      minLength: minLength(10)
     },
     motivation: {
       required,
-      maxLength: maxLength(1000),
-    },
+      maxLength: maxLength(1000)
+    }
   },
   methods: {
-    submitForm: async function () {
+    submitForm: async function(e) {
       this.$v.$touch();
       if (this.$v.$invalid) {
         this.showErrorCallout = true;
@@ -303,24 +304,24 @@ export default {
         this.errors.tel = this.compileErrors.tel;
         this.errors.motivation = this.compileErrors.motivation;
         document.querySelector("#main").scrollIntoView({
-          behavior: "smooth",
+          behavior: "smooth"
         });
       } else {
         this.showErrorCallout = false;
-        this.$router.push("/ik-wil-hulp/success");
+        e.currentTarget.submit();
       }
     },
-    checkMotivationMaxChars: function () {
+    checkMotivationMaxChars: function() {
       if (this.motivation.length >= 1000) {
-        this.motivation = this.motivation.substring(0, 1000)
+        this.motivation = this.motivation.substring(0, 1000);
       }
     }
   },
   computed: {
-    motivationMaxCharacters: function () {
+    motivationMaxCharacters: function() {
       return 1000 - this.motivation.length;
     },
-    compileErrors: function () {
+    compileErrors: function() {
       let nameError, emailError, telError, motivationError;
 
       if (!this.$v.name.required) {
@@ -356,10 +357,10 @@ export default {
         name: nameError,
         email: emailError,
         tel: telError,
-        motivation: motivationError,
+        motivation: motivationError
       };
-    },
-  },
+    }
+  }
 };
 </script>
 

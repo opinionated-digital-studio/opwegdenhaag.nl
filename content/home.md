@@ -12,7 +12,6 @@ samenvatting: 'Een maatje is een vrijwilliger die voor een periode van ten minst
   is het een vorm van georganiseerde vriendschap: een maatje is een kameraad, géén
   hulpverlener.'
 samenvatting_actueel: In deze rubriek vind je de laatste nieuwsberichten over het
-  Maatjesproject Op Weg en informatie over allerlei zaken die te maken hebben met
+  Maatjesproject Op Weg en informatie over allerlei zaken die te maken hebben met 
   de zorg voor mensen die een eerste psychose hebben gehad.
-
 ---

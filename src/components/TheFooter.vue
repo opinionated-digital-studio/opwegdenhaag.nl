@@ -45,7 +45,7 @@
             <ul class="ow-footer__menu">
               <li><strong>Stichting Ozanam 's-Gravenhage</strong></li>
               <li>2e Schuytstraat 244</li>
-              <li>2517IS Den Haag</li>
+              <li>2517 IS Den Haag</li>
               <li>Nederland</li>
               <br />
               <a class="ow-footer__menu-link" href="mailto:mail@opwegdenhaag.nl"

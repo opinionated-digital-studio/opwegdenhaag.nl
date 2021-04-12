@@ -85,7 +85,7 @@ export default {
   &__lead,
   &__link {
     position: relative;
-    z-index: 1000;
+    z-index: 10;
   }
 
   &__title {

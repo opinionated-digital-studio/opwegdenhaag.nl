@@ -3,7 +3,7 @@
     class="ow-header"
     :class="[
       { 'ow-header--hidden': !showHeader },
-      'ow-header' + headerModifier,
+      'ow-header' + headerModifier
     ]"
   >
     <div class="ow-container">
@@ -17,11 +17,11 @@
           class="column ow-header__nav"
           :class="[
             {
-              'ow-header__nav--parent-hidden': !showHeader,
+              'ow-header__nav--parent-hidden': !showHeader
             },
             {
-              'ow-header__nav--is-active': isActiveMenu,
-            },
+              'ow-header__nav--is-active': isActiveMenu
+            }
           ]"
         >
           <div class="mobilefix">
@@ -30,13 +30,13 @@
                 <span
                   class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--top"
                   :class="{
-                    'ow-header__toggle-bubble-hamburger--top--is-active': isActiveMenu,
+                    'ow-header__toggle-bubble-hamburger--top--is-active': isActiveMenu
                   }"
                 ></span>
                 <span
                   class="ow-header__toggle-bubble-hamburger ow-header__toggle-bubble-hamburger--bottom"
                   :class="{
-                    'ow-header__toggle-bubble-hamburger--bottom--is-active': isActiveMenu,
+                    'ow-header__toggle-bubble-hamburger--bottom--is-active': isActiveMenu
                   }"
                 ></span>
               </button>
@@ -45,7 +45,7 @@
           <div
             class="ow-header__toggle-bubble-background"
             :class="{
-              'ow-header__toggle-bubble-background--is-active': isActiveMenu,
+              'ow-header__toggle-bubble-background--is-active': isActiveMenu
             }"
           ></div>
           <ul class="ow-header__menu">
@@ -133,20 +133,20 @@ export default {
     headerStyle: {
       type: String,
       required: false,
-      default: "white",
-    },
+      default: "white"
+    }
   },
   mounted() {
     if (process.isClient) {
-      this.windowWidth = window.innerWidth
+      this.windowWidth = window.innerWidth;
       window.addEventListener("scroll", this.onScroll);
-      window.addEventListener("resize", this.onResize)
+      window.addEventListener("resize", this.onResize);
     }
   },
   beforeDestroy() {
     if (process.isClient) {
       window.removeEventListener("scroll", this.onScroll);
-      window.removeEventListener("resize", this.onResize)
+      window.removeEventListener("resize", this.onResize);
     }
   },
   data() {
@@ -158,7 +158,7 @@ export default {
     };
   },
   computed: {
-    headerModifier: function () {
+    headerModifier: function() {
       let headerStyleModifierClass;
       switch (this.headerStyle) {
         case "white":
@@ -170,31 +170,31 @@ export default {
       }
       return headerStyleModifierClass;
     },
-    buttonColorModifier: function () {
+    buttonColorModifier: function() {
       let buttonColorModifier;
-        if (this.windowWidth > 1408) {
-          switch (this.headerStyle) {
-            case "white":
-              buttonColorModifier = "primary";
-              break;
-            case "primary":
-              buttonColorModifier = "white";
-              break;
-          }
-        } else {
-          buttonColorModifier = "primary";
+      if (this.windowWidth > 1408) {
+        switch (this.headerStyle) {
+          case "white":
+            buttonColorModifier = "primary";
+            break;
+          case "primary":
+            buttonColorModifier = "white";
+            break;
         }
+      } else {
+        buttonColorModifier = "primary";
+      }
       return buttonColorModifier;
     },
-    buttonSizeModifier: function () {
-      let buttonSizeModifier
-        if (this.windowWidth > 1408) {
-          buttonSizeModifier = "normal";
-        } else {
-          buttonSizeModifier = "large";
-        }
-      return buttonSizeModifier
-    },
+    buttonSizeModifier: function() {
+      let buttonSizeModifier;
+      if (this.windowWidth > 1408) {
+        buttonSizeModifier = "normal";
+      } else {
+        buttonSizeModifier = "large";
+      }
+      return buttonSizeModifier;
+    }
   },
   methods: {
     toggleMenu() {
@@ -202,7 +202,7 @@ export default {
     },
     onResize() {
       if (process.isClient) {
-        this.windowWidth = window.innerWidth
+        this.windowWidth = window.innerWidth;
       }
     },
     onScroll() {
@@ -220,8 +220,8 @@ export default {
         this.showHeader = currentScrollPosition < this.lastScrollPosition;
         this.lastScrollPosition = currentScrollPosition;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

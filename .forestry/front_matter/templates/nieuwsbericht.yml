@@ -9,6 +9,4 @@ fields:
   name: date
   label: date
 pages:
-- content/posts/dit-is-een-test.md
-- content/posts/test-2.md
 - content/posts/test-3.md

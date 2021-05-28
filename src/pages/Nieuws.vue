@@ -11,14 +11,14 @@
     <div class="columns">
       <div class="column is-one-third">
         <p>
-          Mauris sit amet consequat risus, non facilisis nisi. Mauris egestas
-          libero quis ex fermentum, non placerat nibh vehicula. Pellentesque
-          iaculis hendrerit fringilla.
+          In deze rubriek vind je de laatste nieuwsberichten over het
+          Maatjesproject Op Weg en informatie over allerlei zaken die te maken
+          hebben met de zorg voor mensen die een eerste psychose hebben gehad.
         </p>
       </div>
       <div class="column">
         <div class="ow-news-list">
-          <ow-news-list :content="$page.posts.edges"/>
+          <ow-news-list :content="$page.posts.edges" />
         </div>
       </div>
     </div>
@@ -26,17 +26,17 @@
 </template>
 
 <script>
-import OwNewsList from '../components/OwNewsList.vue'
+import OwNewsList from "../components/OwNewsList.vue";
 export default {
   components: {
     OwNewsList
   },
   metaInfo() {
     return {
-    title: 'Nieuws',
-    }
-  },
-}
+      title: "Nieuws"
+    };
+  }
+};
 </script>
 
 <page-query>
